@@ -137,19 +137,19 @@ pip install mindspore-2.4.0-cp39-cp39-linux_aarch64.whl
 1)	检查mindspore是否为2.4.0版本
 ```bash
 pip show mindspore
-# 如版本不匹配，请联系在场布道师进行处理
+# 如版本不匹配，请返回5.2.2安装mindspore
 ```
 2)	检查mindnlp是否为0.4.0版本：
 ```bash
 pip show mindnlp
-# 如版本不匹配，可执行如下命令进行安装，或联系在场布道师进行处理
+# 如版本不匹配，可执行如下命令进行安装
 pip install git+https://github.com/mindspore-lab/mindnlp.git
 ```
 
 3)	检查gradio是否为4.44.0版本：
 ```bash
 pip show gradio
-# 如版本不匹配，可执行如下命令进行安装，或联系在场布道师进行处理
+# 如版本不匹配，可执行如下命令进行安装
 pip uninstall gradio --y
 pip install gradio==4.44.0 -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
