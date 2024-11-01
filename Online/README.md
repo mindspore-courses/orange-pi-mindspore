@@ -12,7 +12,7 @@
 
 步骤1 将Micro SD卡插入读卡器，并将读卡器插入PC。
 
-![environment-setup-1-1](./images/environment_setup_1-1.jpg)
+![environment-setup-1-1](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-1.jpg)
 
 ### 1.2 下载Ubuntu镜像
 
@@ -22,11 +22,11 @@
 
 步骤2 点击图片中箭头图标跳转百度网盘下载页面。
 
-![environment-setup-1-2](./images/environment_setup_1-2.png)
+![environment-setup-1-2](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-2.png)
 
 步骤3 选择桌面版本下载，建议下载0318版本环境。
 
-![environment-setup-1-3](./images/environment_setup_1-3.png)
+![environment-setup-1-3](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-3.png)
 
 步骤4 备选下载方式。
 
@@ -42,13 +42,13 @@
 
   点击[此链接](https://etcher.balena.io/)可跳转到软件官网，点击绿色的下载按钮会跳到软件下载的地方。
 
-  ![environment-setup-1-4](./images/environment_setup_1-4.png)
+  ![environment-setup-1-4](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-4.png)
 
   步骤2 选择下载 Portable版本。
 
   Portable版本无需安装，双击打开即可使用。
 
-  ![environment-setup-1-5](./images/environment_setup_1-5.png)
+  ![environment-setup-1-5](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-5.png)
 
   步骤3 备选下载方式。
 
@@ -56,9 +56,9 @@
 
   步骤4 打开balenaEtcher。
 
-  ![environment-setup-1-6](./images/environment_setup_1-6.png)
+  ![environment-setup-1-6](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-6.png)
 
-  ![environment-setup-1-7](./images/environment_setup_1-7.png)
+  ![environment-setup-1-7](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-7.png)
 
 - Rufus制卡工具：
 
@@ -80,19 +80,19 @@
 
   3. 点击开始烧录，如下图：
 
-  ![environment-setup-1-8](./images/environment_setup_1-8.png)
+  ![environment-setup-1-8](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-8.png)
 
   烧录和验证大概需要20分钟左右，请耐心等待：
 
-  ![environment-setup-1-9](./images/environment_setup_1-9.png)
+  ![environment-setup-1-9](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-9.png)
 
-  ![environment-setup-1-10](./images/environment_setup_1-10.png)
+  ![environment-setup-1-10](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-10.png)
 
   步骤2 烧录完成。
 
   烧录完成后，balenaEtcher的显示界面如下图所示，如果显示绿色的指示图标说明镜像烧录成功，此时就可以退出balenaEtcher，拔出TF卡，插入到开发板的TF卡槽中使用：
 
-  ![environment-setup-1-11](./images/environment_setup_1-11.png)
+  ![environment-setup-1-11](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-11.png)
 
 - Rufus烧录镜像：
 
@@ -100,13 +100,13 @@
 
   sd卡插入读卡器，读卡器插入电脑、选择镜像与sd卡，点击“开始”。
 
-  ![environment-setup-1-12](./images/environment_setup_1-12.png)
+  ![environment-setup-1-12](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-12.png)
 
   步骤2 烧录完成。
 
   等待结束后直接拔出读卡器。
 
-  ![environment-setup-1-13](./images/environment_setup_1-13.png)
+  ![environment-setup-1-13](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-13.png)
 
 ## 2. CANN升级
 
@@ -116,7 +116,7 @@
 
 使用`CTRL+ALT+T`快捷键或点击页面下方带有`$_`的图标打开终端。
 
-![environment-setup-1-14](./images/environment_setup_1-14.png)
+![environment-setup-1-14](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-14.png)
 
 切换root用户，root用户密码：Mind@123。
 
@@ -141,7 +141,7 @@
 
 步骤3 打开昇腾CANN官网访问社区版资源[下载地址](https://www.hiascend.com/developer/download/community/result?module=cann)，下载所需版本的toolkit包，该处以8.0.RC2.alpha003版本为例，如下图：
 
-![environment-setup-1-15](./images/environment_setup_1-15.png)
+![environment-setup-1-15](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-15.png)
 
 > 执行如下命令，根据环境实际输出信息选择aarch64或是x86_64对应的软件包。
 
@@ -171,7 +171,7 @@
 
 安装时弹出此提示后输入Y，然后按回车键继续安装。
 
-![environment-setup-1-16](./images/environment_setup_1-16.png)
+![environment-setup-1-16](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-16.png)
 
 升级完成后，若显示如下信息，则说明软件升级成功：
 
@@ -219,7 +219,7 @@ npu-smi info
 
 步骤3 打开昇腾CANN官网访问社区版资源[下载地址](https://www.hiascend.com/developer/download/community/result?module=cann)，下载与CANN包版本一致，并且匹配NPU型号的kernel包，如下图：
 
-![environment-setup-1-18](./images/environment_setup_1-18.png)
+![environment-setup-1-18](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-18.png)
 
 步骤4 进入Kernels包下载目录。
 
@@ -285,7 +285,7 @@ pip install https://ms-release.obs.cn-north-4.myhuaweicloud.com/2.3.1/MindSpore/
 
   4. 根据实际python版本信息，找到对应daily whl包。由于香橙派开发板默认为python3.9，所以目标daily包为mindspore-2.4.0-cp39-cp39-linux_aarch64.whl。
 
-  ![environment-setup-1-19](./images/environment_setup_1-19.png)
+  ![environment-setup-1-19](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-19.png)
 
 > 本教程旨在让开发者体验到最新的版本特定，但由于daily包并不是正式发布版本，在运行中可能会出现一些问题，开发者可通过[社区](https://gitee.com/mindspore/mindspore)提交issue，或可自行修改并提交PR。
 
@@ -300,6 +300,7 @@ wget https://repo.mindspore.cn/mindspore/mindspore/version/202409/20240911/maste
 pip install mindspore-2.4.0-cp39-cp39-linux_aarch64.whl
 
 ```
+**注：目前镜像已内置MindSpore2.4版本，推荐开发者使用MindSpore 2.4版本运行推理案例**
 
 # 模型在线推理
 
@@ -351,24 +352,24 @@ cd /home/HwHiAiUser/samples/notebooks/
 
 在执行该脚本后，终端会出现如下打印信息，在打印信息中会有登录Jupyter Lab的网址链接。
 
-![model-infer1](./images/model_infer1.png)
+![model-infer1](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/model_infer1.png)
 
 然后打开浏览器。
 
-![model-infer2](./images/model_infer2.png)
+![model-infer2](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/model_infer2.png)
 
 再在浏览器中输入上面看到的网址链接，就可以登录Jupyter Lab软件了。
 
-![model-infer3](./images/model_infer3.png)
+![model-infer3](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/model_infer3.png)
 
 步骤2 在Jupyter Lab界面双击下图所示的案例目录，此处以“04-FCN”为例，即可进入到该案例的目录中。
 
-![model-infer4](./images/model_infer4.png)
+![model-infer4](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/model_infer4.png)
 
 步骤3 在该目录下有运行该示例的所有资源，其中mindspore_fcn8s.ipynb是在Jupyter Lab中运行该样例的文件，双击打开mindspore_fcn8s.ipynb，在右侧窗口中会显示。mindspore_fcn8s.ipynb文件中的内容，如下图所示：
 
-![model-infer5](./images/model_infer5.png)
+![model-infer5](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/model_infer5.png)
 
 步骤4 单击⏩按钮运行样例，在弹出的对话框中单击“Restart”按钮，此时该样例开始运行。
 
-![model-infer6](./images/model_infer6.png)
+![model-infer6](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/model_infer6.png)
