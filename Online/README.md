@@ -300,6 +300,7 @@ wget https://repo.mindspore.cn/mindspore/mindspore/version/202409/20240911/maste
 pip install mindspore-2.4.0-cp39-cp39-linux_aarch64.whl
 
 ```
+**注：** 目前镜像已内置了MindSpore2.4版本，推荐使用MindSpore2.4。
 
 # 模型在线推理
 
