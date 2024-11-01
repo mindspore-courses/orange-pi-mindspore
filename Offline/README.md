@@ -39,13 +39,13 @@ https://www.mindspore.cn/tutorials/application/zh-CN/r2.3.0rc2/cv/resnet50.html
 
 ResNet网络介绍、数据集准备和加载、网络构建、模型训练与评估等都有详细说明。
 
-![](https://fileserver.developer.huaweicloud.com/FileServer/getFile/cmtybbs/fe4/434/aae/9d1265aa60fe4434aaed595a831dba5b.20240923105849.53166796462170531377243288274083:20241031080049:2400:8D8CACA27B59AFC3D6FD84FD10C5AE6071B003D1C5841D48BB70738CC6B572B4.png)
+![1](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/1.png)
 
 ## 2.3 模型训练
 
 将2.2环节下载的训练代码文档上传到ModelArts开发平台。
 
-![](https://fileserver.developer.huaweicloud.com/FileServer/getFile/cmtybbs/fe4/434/aae/9d1265aa60fe4434aaed595a831dba5b.20240923111243.81673027348020043415674996564823:20241031080049:2400:3FABABCB7CC6B9621E9CD6FCD4DC374BD34CC6894B2E8E47E989B36EC55E58BB.png)
+![2](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/2.png)
 
 **训练前修改部分代码：**
 
@@ -55,7 +55,7 @@ ResNet网络介绍、数据集准备和加载、网络构建、模型训练与�
 
     %env no_proxy='a.test.com,127.0.0.1,2.2.2.2'
 
-![](https://fileserver.developer.huaweicloud.com/FileServer/getFile/cmtybbs/fe4/434/aae/9d1265aa60fe4434aaed595a831dba5b.20240923111431.12243413612257514346745748520021:20241031080049:2400:AAD2C8C86A80511B2E6BAAC595316DF6B29DFF0134109485142420CA521CF260.png)
+![3](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/3.png)
 
 **步骤 2** 添加mindir模型导出代码
 
@@ -65,15 +65,15 @@ ResNet网络介绍、数据集准备和加载、网络构建、模型训练与�
     ms.export(net, inputs, file_name= "resnet50", file_format= "MINDIR")
 
 
-![](https://fileserver.developer.huaweicloud.com/FileServer/getFile/cmtybbs/fe4/434/aae/9d1265aa60fe4434aaed595a831dba5b.20240923111545.65417052767328805744693575852266:20241031080049:2400:19A34D23B5066BC18ED36AC5F4F19FD32FA1150B5A639C9F81F1120DB47AB659.png)
+![4](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/4.png)
 
 在云环境上运行notebook文档，生成MINDIR模型文件。
 
-![](https://fileserver.developer.huaweicloud.com/FileServer/getFile/cmtybbs/fe4/434/aae/9d1265aa60fe4434aaed595a831dba5b.20240923111715.18436978879899341206009711125088:20241031080049:2400:96341BFB9DBBED3EEBDF1A323EDFC756FC485EBC7C2F86E9DA9C16C4C02D5A33.png)
+![5](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/5.png)
 
 右键下载MINDIR模型文件至本地。
 
-![](https://fileserver.developer.huaweicloud.com/FileServer/getFile/cmtybbs/fe4/434/aae/9d1265aa60fe4434aaed595a831dba5b.20240923111747.84962472863906595724192582963100:20241031080049:2400:E17D0EC0A5BA18ACE3D0B95C0EA978B691A39467C0CB0C39F3D501E24A932B97.png)
+![6](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/6.png)
 
 # 3 OrangePi AIpro上离线推理
 
@@ -91,7 +91,7 @@ https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/infer/03-Re
 
 在“/home/HwHiAiUser/samples/noteboooks”目录下创建ResNet50_2.2.14文件夹，将训练获得的mindir模型文件放入该文件夹。
 
-![](https://fileserver.developer.huaweicloud.com/FileServer/getFile/cmtybbs/fe4/434/aae/9d1265aa60fe4434aaed595a831dba5b.20240923112548.92039182042172351918001026106515:20241031080049:2400:6589E2CCBC8809685CE577A5184A1544C4CDB1BD6986B8EC9B3EAEEA5BF2E785.png)
+![7](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/7.png)
 
 **步骤 2** mindir模型文件转换为om模型
 
@@ -100,7 +100,7 @@ https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/infer/03-Re
     #获取bash.sh文件
     wget https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/package/bash.sh
 
-![](https://fileserver.developer.huaweicloud.com/FileServer/getFile/cmtybbs/fe4/434/aae/9d1265aa60fe4434aaed595a831dba5b.20240923112729.07833959781658702430790746833001:20241031080049:2400:FF16DE299EC86CE2526B2EEAB2CB6E6168C47C66ADCE1AED1ACB138824340F76.png)
+![8](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/8.png)
 
     #执行bash.sh文件
     source bash.sh /home/HwHiAiUser/samples/notebooks/ResNet50_2.2.14/resnet50.mindir resnet50
@@ -113,7 +113,7 @@ https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/infer/03-Re
 
 运行完成后生成的om文件和bash.sh文件同目录。
 
-![](https://fileserver.developer.huaweicloud.com/FileServer/getFile/cmtybbs/fe4/434/aae/9d1265aa60fe4434aaed595a831dba5b.20240923112905.57952752746362907226046618612493:20241031080049:2400:61C4030DA13DA1272DBD32FD8F1D744FBEFF40F6F06521D48B519DBD81A110DE.png)
+![9](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/9.png)
 
 ## 3.3 创建推理项目文件夹
 
@@ -134,21 +134,21 @@ https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/infer/03-Re
 
 打开notebook运行环境，可以看到创建的ResNet50项目文件夹。
 
-![](https://fileserver.developer.huaweicloud.com/FileServer/getFile/cmtybbs/fe4/434/aae/9d1265aa60fe4434aaed595a831dba5b.20240923113840.54845390764650260182362965136638:20241031080049:2400:FE325BA8852C50CEA07B15903EF47C33E8219070FF49C3966C251EB69DC0A213.png)
+![10](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/10.png)
 
-![](https://fileserver.developer.huaweicloud.com/FileServer/getFile/cmtybbs/fe4/434/aae/9d1265aa60fe4434aaed595a831dba5b.20240923113956.54996029437551285459692913270887:20241031080049:2400:7AC88294D000B0C2201760216AA7A881872A6E93DE6DC3E6B767DC3B0EF6ADB8.png)
+![11](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/11.png)
 
 **步骤 2** 修改推理代码
 
 打开main_resnet50.ipynb文档，在下载环节，注释掉om文件下载的代码，保留数据集下载的代码。
 
-![](https://fileserver.developer.huaweicloud.com/FileServer/getFile/cmtybbs/fe4/434/aae/9d1265aa60fe4434aaed595a831dba5b.20240923114138.79404474880638051772265782921287:20241031080049:2400:E2615BDB2E7D33AE54DB3F5936CB445D7E1B055733F98152EF8F07741A904797.png)
+![12](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/12.png)
 
 **步骤 3** 执行推理应用
 
 运行main_resnet50.ipynb文档，进行图像分类推理应用。
 
-![](https://fileserver.developer.huaweicloud.com/FileServer/getFile/cmtybbs/fe4/434/aae/9d1265aa60fe4434aaed595a831dba5b.20240923114235.47650436035512809175532572673275:20241031080049:2400:E4560563D90E6D723B8B9255A027D3D050D3FAC03A4C90168E5CA8A45D2D4607.png)
+![13](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/13.png)
 
 **实验总结**
 
@@ -156,4 +156,4 @@ https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/infer/03-Re
 
 # 4 更多案例
 
-**更多基于MindSpore框架开发的全流程实验指导文档详见[orange-pi-mindspore](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/infer)中的[基于昇思MindSpore+Orangepi AIpro的训推全流程指导书(离线推理)]()**
+**更多基于MindSpore框架开发的全流程实验指导文档详见[orange-pi-mindspore](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/infer)中的[基于昇思MindSpore+Orangepi AIpro的训推全流程指导书(离线推理)](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Offline/%E5%9F%BA%E4%BA%8E%E6%98%87%E6%80%9DMindSpore%2BOrangepi%20AIpro%E7%9A%84%E8%AE%AD%E6%8E%A8%E5%85%A8%E6%B5%81%E7%A8%8B%E6%8C%87%E5%AF%BC%E4%B9%A6(%E7%A6%BB%E7%BA%BF%E6%8E%A8%E7%90%86))**
