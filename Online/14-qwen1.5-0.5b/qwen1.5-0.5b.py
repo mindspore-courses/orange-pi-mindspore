@@ -30,7 +30,7 @@ def predict(message, history):
             return_tensors="ms",
             tokenize=True
         )
-    streamer = TextIteratorStreamer(tokenizer, timeout=120, skip_prompt=True, skip_special_tokens=True)
+    streamer = TextIteratorStreamer(tokenizer, timeout=300, skip_prompt=True, skip_special_tokens=True)
     generate_kwargs = dict(
         input_ids=input_ids,
         streamer=streamer,
