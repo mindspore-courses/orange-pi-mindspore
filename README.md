@@ -1,8 +1,8 @@
 # orange-pi-mindspore
 ### 支持模型
 #### 当前香橙派在线推理支持的模型如下：
-|  模型名 | 支持CANN版本 | 支持Mindspore版本 |
-|  ----  | ---- | ---- |
+| 模型名 | 支持CANN版本 | 支持Mindspore版本 |
+| :----- |:----- |:----- |
 | [ResNet50](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/02-ResNet50) | 8.0.RC2.alpha003  | 2.4.0|
 |[ViT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/03-ViT)| 8.0.RC2.alpha003  | 2.4.0|
 |[FCN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/04-FCN)| 8.0.RC2.alpha003  | 2.4.0|
@@ -21,7 +21,7 @@
 
 
 #### 当前香橙派离线推理支持的模型如下：
-|  模型名 | 支持CANN版本 | 支持Mindspore版本 |
+| 模型名 | 支持CANN版本 | 支持Mindspore版本 |
 |  ----  | ---- | ---- |
 | [CNNCTC](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Offline/01-CNNCTC) | 8.0.RC2.alpha003  | 2.4.0|
 |[ResNet50](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Offline/02-ResNet50)| 8.0.RC2.alpha003  | 2.4.0|
