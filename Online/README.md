@@ -139,15 +139,9 @@
 
 ```
 
-步骤3 打开昇腾CANN官网访问社区版资源[下载地址](https://www.hiascend.com/developer/download/community/result?module=cann)，下载所需版本的toolkit包，该处以8.0.RC2.alpha003版本为例，如下图：
+步骤3 打开昇腾CANN官网访问社区版资源[下载地址](https://www.hiascend.com/developer/download/community/result?module=cann)，下载所需版本的toolkit包，该处以8.0.RC3.alpha002版本aarch64架构为例（14和15两个案例仅在此版本上验证通过），如下图：
 
 ![environment-setup-1-15](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-15.png)
-
-> 执行如下命令，根据环境实际输出信息选择aarch64或是x86_64对应的软件包。
-
-   ```bash
-   uname -a
-   ```
 
 步骤4 进入Toolkit包下载目录。
 
@@ -160,18 +154,14 @@
 步骤5 给CANN包添加执行权限。
 
 ```bash
-(base) root@orangepiaipro: /home/HwHiAiUser/Downloads# chmod +x ./Ascend-cann-toolkit_8.0.RC2.alpha003_linux-aarch64.run
+(base) root@orangepiaipro: /home/HwHiAiUser/Downloads# chmod +x ./Ascend-cann-toolkit_8.0.RC3.alpha002_linux-aarch64.run
 ```
 
 步骤6 执行以下命令升级软件。
 
 ```bash
-(base) root@orangepiaipro: /home/HwHiAiUser/Downloads#./Ascend-cann-toolkit_8.0.RC2.alpha003_linux-aarch64.run --install
+(base) root@orangepiaipro: /home/HwHiAiUser/Downloads#./Ascend-cann-toolkit_8.0.RC3.alpha002_linux-aarch64.run --install --quiet
 ```
-
-安装时弹出此提示后输入Y，然后按回车键继续安装。
-
-![environment-setup-1-16](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-16.png)
 
 升级完成后，若显示如下信息，则说明软件升级成功：
 
@@ -232,13 +222,13 @@ npu-smi info
 步骤5 给kernels包添加执行权限。
 
 ```bash
-(base) root@orangepiaipro: /home/HwHiAiUser/Downloads# chmod +x ./Ascend-cann-kernels-310b_8.0.RC2.alpha003_linux.run
+(base) root@orangepiaipro: /home/HwHiAiUser/Downloads# chmod +x ./Ascend-cann-kernels-310b_8.0.RC3.alpha002_linux.run
 ```
 
 步骤6 执行以下命令升级软件。
 
 ```bash
-(base) root@orangepiaipro: /home/HwHiAiUser/Downloads#./Ascend-cann-kernels-310b_8.0.RC2.alpha003_linux.run --install
+(base) root@orangepiaipro: /home/HwHiAiUser/Downloads#./Ascend-cann-kernels-310b_8.0.RC3.alpha002_linux.run --install
 ```
 
 升级完成后，若显示如下信息，则说明软件升级成功：
@@ -253,15 +243,10 @@ xxx install success
 
 ## 3. MindSpore升级
 
-### 3.1 安装官网正式版（以MindSpore2.3.1为例）
+### 3.1 安装官网正式版（以MindSpore2.4.0为例）
+当前2.3.1版本存在可用内存必须大于总内存的50%才能启动推理程序的限制，这一限制在2.4.0版本中被移除。
 
-方法一：以HwHiAiUser用户打开终端，在终端直接运行pip install命令。
-
-```bash
-pip install mindspore==2.3.1
-```
-
-方法二：参考[昇思MindSpore官网安装教程](https://www.mindspore.cn/install) 安装。
+参考[昇思MindSpore官网安装教程](https://www.mindspore.cn/install) 安装。
 
 ```bash
 
@@ -300,7 +285,7 @@ wget https://repo.mindspore.cn/mindspore/mindspore/version/202409/20240911/maste
 pip install mindspore-2.4.0-cp39-cp39-linux_aarch64.whl
 
 ```
-**注：目前镜像已内置MindSpore2.4版本，推荐开发者使用MindSpore 2.4版本运行推理案例**
+**注：目前镜像（预计于24年第四季度发布）已内置MindSpore2.4版本，部分案例仅支持MindSpore 2.4版本运行，推荐开发者使用最新镜像。**
 
 # 模型在线推理
 
@@ -341,12 +326,12 @@ git clone https://github.com/mindspore-courses/orange-pi-mindspore.git
 15-tinyllama
 ```
 
-## 2. 推理执行
+## 2. 推理执行（案例01-13）
 
 步骤1 启动Jupyter Lab界面。
 
 ```bash
-cd /home/HwHiAiUser/samples/notebooks/  
+cd /home/HwHiAiUser/orange-pi-mindspore/ 
 ./start_notebook.sh
 ```
 
@@ -373,3 +358,34 @@ cd /home/HwHiAiUser/samples/notebooks/
 步骤4 单击⏩按钮运行样例，在弹出的对话框中单击“Restart”按钮，此时该样例开始运行。
 
 ![model-infer6](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/model_infer6.png)
+
+**注：如遇报错“线程同步失败”，请尝试关闭swap。执行sudo swapoff /swapfile命令。**
+
+## 3. 推理执行（案例14、15）
+**注：此处推荐使用aipro20T 24G版本，aipro8T 16G也可运行，但请注意剩余内存。暂不支持小于16G内存的aipro运行这两个案例。**
+
+步骤1 进入案例目录，以14-qwen1.5-0.5b为例，15号案例类似。
+
+```bash
+cd /home/HwHiAiUser/orange-pi-mindspore/Online/14-qwen1.5-0.5b
+```
+
+**注：首次启动时会自动从镜像站下载模型，如遇网络原因无法下载，可以通过电脑下载后上传到案例目录下的.mindnlp文件夹内的对应目录下。**
+
+步骤2 将模型路径修改为本地模型存放的路径（可选）
+
+```bash
+vim qwen1.5-0.5b.py
+# 找到以下两行
+tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen1.5-0.5B-Chat", ms_dtype=mindspore.float16)
+model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen1.5-0.5B-Chat", ms_dtype=mindspore.float16)
+# 修改为
+tokenizer = AutoTokenizer.from_pretrained("/home/HwHiAiUser/orange-pi-mindspore-master/Online/14-qwen1.5-0.5b/.mindnlp/model/Qwen/Qwen1.5-0.5B-Chat", ms_dtype=mindspore.float16)
+model = AutoModelForCausalLM.from_pretrained("/home/HwHiAiUser/orange-pi-mindspore-master/Online/14-qwen1.5-0.5b/.mindnlp/model/Qwen/Qwen1.5-0.5B-Chat", ms_dtype=mindspore.float16)
+```
+
+步骤3 启动推理程序
+
+```bash
+python3 qwen1.5-0.5b.py
+```
