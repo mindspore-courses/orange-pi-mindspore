@@ -11,21 +11,21 @@
 
 | 模型名 | 支持CANN版本 | 支持Mindspore版本 | 支持的香橙派开发板型号 |
 | :----- |:----- |:----- |:-----|
-| [ResNet50](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/02-ResNet50) | 8.0.RC2.alpha003  | 2.4.0| 8T16G |
-|[ViT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/03-ViT)| 8.0.RC2.alpha003  | 2.4.0| 8T16G |
-|[FCN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/04-FCN)| 8.0.RC2.alpha003  | 2.4.0| 8T16G |
-|[ShuffleNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/05-ShuffleNet)| 8.0.RC2.alpha003  | 2.4.0| 8T16G |
-|[SSD](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/06-SSD)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
-|[RNN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/07-RNN)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
-|[LSTM+CRF](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/08-LSTM%2BCRF)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
-|[GAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/09-GAN)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
-|[DCGAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/10-DCGAN)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
-|[Pix2Pix](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/11-Pix2Pix)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
-|[Diffusion](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/12-Diffusion)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
-|[ResNet50_transfer](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/13-ResNet50_transfer)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
-|[Qwen1.5-0.5b](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/14-qwen1.5-0.5b)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
-|[TinyLlama-1.1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/15-tinyllama)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
-|[DctNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/16-DctNet)  |8.0.RC2.alpha003  | 2.4.0| 8T16G |
+| [ResNet50](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/02-ResNet50) | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[ViT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/03-ViT)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[FCN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/04-FCN)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[ShuffleNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/05-ShuffleNet)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[SSD](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/06-SSD)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[RNN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/07-RNN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[LSTM+CRF](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/08-LSTM%2BCRF)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[GAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/09-GAN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[DCGAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/10-DCGAN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[Pix2Pix](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/11-Pix2Pix)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[Diffusion](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/12-Diffusion)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[ResNet50_transfer](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/13-ResNet50_transfer)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[Qwen1.5-0.5b](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/14-qwen1.5-0.5b)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[TinyLlama-1.1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/15-tinyllama)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[DctNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/16-DctNet)  |8.0.RC3.alpha002  | 2.4.10| 8T16G |
 
 
 
