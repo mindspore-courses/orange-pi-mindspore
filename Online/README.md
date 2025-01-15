@@ -1,20 +1,52 @@
-# 环境搭建指南
+# 昇思MindSpore香橙派能力介绍
+- 开发友好：动态图易用性提升，类huggingface风格降低开发调试门槛
+- 性能提升：mindspore.jit编译成图，一行代码实现推理性能提升一倍
+- 全流程支持：在香橙派上支持模型训推全流程
+
+# 最新动态
+
+目前我们在镜像中预装了Jupyter Lab软件。已实现[OrangePi AIpro（香橙派）开发板的系统镜像](http://www.orangepi.cn/html/hardWare/computerAndMicrocontrollers/service-and-support/Orange-Pi-AIpro.html)预置和[昇思MindSpore AI框架](https://www.mindspore.cn/install/)，并在后续版本迭代中持续演进，当前已支持MindSpore官网教程涵盖的全部网络模型。
+
+# 支持的模型和版本兼容
+
+| 模型名 | 支持CANN版本 | 支持Mindspore版本 | 支持的香橙派开发板型号 |
+| :----- |:----- |:----- |:-----|
+| [ResNet50](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/02-ResNet50) | 8.0.RC2.alpha003  | 2.4.0| 8T16G |
+|[ViT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/03-ViT)| 8.0.RC2.alpha003  | 2.4.0| 8T16G |
+|[FCN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/04-FCN)| 8.0.RC2.alpha003  | 2.4.0| 8T16G |
+|[ShuffleNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/05-ShuffleNet)| 8.0.RC2.alpha003  | 2.4.0| 8T16G |
+|[SSD](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/06-SSD)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
+|[RNN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/07-RNN)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
+|[LSTM+CRF](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/08-LSTM%2BCRF)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
+|[GAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/09-GAN)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
+|[DCGAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/10-DCGAN)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
+|[Pix2Pix](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/11-Pix2Pix)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
+|[Diffusion](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/12-Diffusion)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
+|[ResNet50_transfer](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/13-ResNet50_transfer)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
+|[Qwen1.5-0.5b](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/14-qwen1.5-0.5b)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
+|[TinyLlama-1.1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/15-tinyllama)|8.0.RC2.alpha003  | 2.4.0| 8T16G |
+|[DctNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/16-DctNet)  |8.0.RC2.alpha003  | 2.4.0| 8T16G |
+
+
+
+# 指导文档
+## 环境搭建指南
 
 [![查看源文件](https://mindspore-website.obs.cn-north-4.myhuaweicloud.com/website-images/master/resource/_static/logo_source.svg)](https://gitee.com/mindspore/docs/blob/master/docs/mindspore/source_zh_cn/orange_pi/environment_setup.md)
 
 本章节将介绍如何在OrangePi AIpro上烧录镜像，自定义安装CANN和MindSpore，并配置运行环境。
 
-## 1. 镜像烧录（以Windows系统为例）
+### 1. 镜像烧录（以Windows系统为例）
 
 镜像烧录可以在任何操作系统内执行，这里将以在Windows系统为例，演示使用相应版本的balenaEtcher工具，快速烧录镜像至您的Micro SD卡。
 
-### 1.1 制卡前准备
+#### 1.1 制卡前准备
 
 步骤1 将Micro SD卡插入读卡器，并将读卡器插入PC。
 
 ![environment-setup-1-1](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-1.jpg)
 
-### 1.2 下载Ubuntu镜像
+#### 1.2 下载Ubuntu镜像
 
 步骤1 点击[此链接](http://www.orangepi.cn/html/hardWare/computerAndMicrocontrollers/service-and-support/Orange-Pi-AIpro.html)进入镜像下载页面。
 
@@ -32,7 +64,7 @@
 
 如果百度网盘下载过慢，可以使用[此链接](https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/OrangePi/20240318/opiaipro_ubuntu22.04_desktop_aarch64_20240318.img.xz)直接下载。
 
-### 1.3 下载制卡工具
+#### 1.3 下载制卡工具
 
 有两种制卡工具balenaEtcher、Rufus，可根据自己电脑情况任选一种工具进行烧录。
 
@@ -66,7 +98,7 @@
 
   点击[此链接](https://github.com/pbatard/rufus/releases/download/v4.5/rufus-4.5.exe)，进行下载、安装。
 
-### 1.4 选择和烧录镜像
+#### 1.4 选择和烧录镜像
 
 这里介绍balenaEtcher、Rufus两种制卡工具烧录镜像，您可按对应工具进行烧录。
 
@@ -108,9 +140,9 @@
 
   ![environment-setup-1-13](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-13.png)
 
-## 2. CANN升级
+### 2. CANN升级
 
-### 2.1 Toolkit升级
+#### 2.1 Toolkit升级
 
 步骤1 打开终端，切换root用户。
 
@@ -183,7 +215,7 @@ xxx install success
 
 ```
 
-### 2.2 Kernels升级
+#### 2.2 Kernels升级
 
 > 二进制算子包Kernels依赖CANN软件包Toolkit，执行升级时，当前环境需已安装配套版本的Toolkit，并使用同一用户安装。
 
@@ -241,9 +273,9 @@ xxx install success
 
 - 安装升级后的路径（以root用户默认安装升级路径为例）：“/usr/local/Ascend/ ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/kernel”。
 
-## 3. MindSpore升级
+### 3. MindSpore升级
 
-### 3.1 安装官网正式版（以MindSpore2.4.0为例）
+#### 3.1 安装官网正式版（以MindSpore2.4.0为例）
 当前2.3.1版本存在可用内存必须大于总内存的50%才能启动推理程序的限制，这一限制在2.4.0版本中被移除。
 
 参考[昇思MindSpore官网安装教程](https://www.mindspore.cn/install) 安装。
@@ -256,7 +288,7 @@ pip install https://ms-release.obs.cn-north-4.myhuaweicloud.com/2.3.1/MindSpore/
 
 ```
 
-### 3.2 安装MindSpore daily包（以9月11日daily包为例）
+#### 3.2 安装MindSpore daily包（以9月11日daily包为例）
 
 香橙派开发板支持自定义安装MindSpore daily包，可从[此链接](https://repo.mindspore.cn/mindspore/mindspore/version/)获取到对应日期的软件包。
 
@@ -287,11 +319,11 @@ pip install mindspore-2.4.0-cp39-cp39-linux_aarch64.whl
 ```
 **注：目前镜像（预计于24年第四季度发布）已内置MindSpore2.4版本，部分案例仅支持MindSpore 2.4版本运行，推荐开发者使用最新镜像。**
 
-# 模型在线推理
+## 模型在线推理
 
 本章节将介绍如何在OrangePi AIpro（下称：香橙派开发板）下载昇思MindSpore在线推理案例，并启动Jupyter Lab界面执行推理。
 
-## 1. 下载案例
+### 1. 下载案例
 
 步骤1 下载案例代码。
 
@@ -326,7 +358,7 @@ git clone https://github.com/mindspore-courses/orange-pi-mindspore.git
 15-tinyllama
 ```
 
-## 2. 推理执行（案例01-13）
+### 2. 推理执行（案例01-13）
 
 步骤1 启动Jupyter Lab界面。
 
@@ -361,7 +393,7 @@ cd /home/HwHiAiUser/orange-pi-mindspore/
 
 **注：如遇报错“线程同步失败”，请尝试关闭swap。执行sudo swapoff /swapfile命令。**
 
-## 3. 推理执行（案例14、15）
+### 3. 推理执行（案例14、15）
 **注：此处推荐使用aipro20T 24G版本，aipro8T 16G也可运行，但请注意剩余内存。暂不支持小于16G内存的aipro运行这两个案例。**
 
 步骤1 进入案例目录，以14-qwen1.5-0.5b为例，15号案例类似。
