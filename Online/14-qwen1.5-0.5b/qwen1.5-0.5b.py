@@ -20,8 +20,6 @@ def build_input_from_chat_history(chat_history, msg: str):
 
 # Function to generate model predictions.
 def predict(message, history):
-    history_transformer_format = history + [[message, ""]]
-
     # Formatting the input for the model.
     messages = build_input_from_chat_history(history, message)
     input_ids = tokenizer.apply_chat_template(
