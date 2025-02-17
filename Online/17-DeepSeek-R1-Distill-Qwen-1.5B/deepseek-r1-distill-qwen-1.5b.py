@@ -39,6 +39,7 @@ def predict(message, history):
         top_p=0.9,
         temperature=0.1,
         num_beams=1,
+        repetition_penalty=1.2 #Add a repetition penalty coefficient
     )
     t = Thread(target=model.generate, kwargs=generate_kwargs)
     t.start()  # Starting the generation in a separate thread.
