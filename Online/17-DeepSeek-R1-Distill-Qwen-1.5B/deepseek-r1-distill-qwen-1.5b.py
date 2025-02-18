@@ -10,6 +10,7 @@ from threading import Thread
 tokenizer = AutoTokenizer.from_pretrained("MindSpore-Lab/DeepSeek-R1-Distill-Qwen-1.5B", mirror="modelers", ms_dtype=mindspore.float16)
 model = AutoModelForCausalLM.from_pretrained("MindSpore-Lab/DeepSeek-R1-Distill-Qwen-1.5B", mirror="modelers", ms_dtype=mindspore.float16)
 
+
 system_prompt = "You are a helpful and friendly chatbot"
 
 def build_input_from_chat_history(chat_history, msg: str):
@@ -57,5 +58,5 @@ def predict(message, history):
 gr.ChatInterface(predict,
                  title="DeepSeek-R1-Distill-Qwen-1.5B",
                  description="问几个问题",
-                 examples=['你是谁？', '介绍一下华为公司']
+                 examples=['你是谁？', '你能做什么？']
                  ).launch()  # Launching the web interface.
