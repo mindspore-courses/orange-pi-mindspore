@@ -4,9 +4,11 @@ from mindnlp.transformers import AutoModelForCausalLM, AutoTokenizer
 from mindnlp.transformers import TextIteratorStreamer
 from threading import Thread
 
-# Loading the tokenizer and model from Hugging Face's model hub.
-tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", ms_dtype=mindspore.float16)
-model = AutoModelForCausalLM.from_pretrained("deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", ms_dtype=mindspore.float16)
+# Load the tokenizer and model from MindNLP.
+# Note: To use MindNLP, you need to install it first. Ensure you are using the master branch of MindNLP,
+# which supports downloading the MindNLP-specific weights from Modelers.
+tokenizer = AutoTokenizer.from_pretrained(".mindnlp/model/MindSpore-Lab/DeepSeek-R1-Distill-Qwen-1.5B", mirror="modelers", ms_dtype=mindspore.float16)
+model = AutoModelForCausalLM.from_pretrained(".mindnlp/model/MindSpore-Lab/DeepSeek-R1-Distill-Qwen-1.5B", mirror="modelers", ms_dtype=mindspore.float16)
 
 system_prompt = "You are a helpful and friendly chatbot"
 
@@ -39,7 +41,7 @@ def predict(message, history):
         top_p=0.9,
         temperature=0.1,
         num_beams=1,
-        repetition_penalty=1.2 #Add a repetition penalty coefficient
+        repetition_penalty=1.2
     )
     t = Thread(target=model.generate, kwargs=generate_kwargs)
     t.start()  # Starting the generation in a separate thread.
