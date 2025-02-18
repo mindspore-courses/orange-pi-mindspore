@@ -7,8 +7,8 @@ from threading import Thread
 # Load the tokenizer and model from MindNLP.
 # Note: To use MindNLP, you need to install it first. Ensure you are using the master branch of MindNLP,
 # which supports downloading the MindNLP-specific weights from Modelers.
-tokenizer = AutoTokenizer.from_pretrained(".mindnlp/model/MindSpore-Lab/DeepSeek-R1-Distill-Qwen-1.5B", mirror="modelers", ms_dtype=mindspore.float16)
-model = AutoModelForCausalLM.from_pretrained(".mindnlp/model/MindSpore-Lab/DeepSeek-R1-Distill-Qwen-1.5B", mirror="modelers", ms_dtype=mindspore.float16)
+tokenizer = AutoTokenizer.from_pretrained("MindSpore-Lab/DeepSeek-R1-Distill-Qwen-1.5B", mirror="modelers", ms_dtype=mindspore.float16)
+model = AutoModelForCausalLM.from_pretrained("MindSpore-Lab/DeepSeek-R1-Distill-Qwen-1.5B", mirror="modelers", ms_dtype=mindspore.float16)
 
 system_prompt = "You are a helpful and friendly chatbot"
 
