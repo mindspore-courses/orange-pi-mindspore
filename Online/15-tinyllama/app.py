@@ -29,7 +29,7 @@ def predict(message, history):
     messages = "</s>".join(["</s>".join(["\n<|user|>:" + item[0], "\n<|assistant|>:" + item[1]])
                         for item in history_transformer_format])
     model_inputs = tokenizer([messages], return_tensors="ms")
-    streamer = TextIteratorStreamer(tokenizer, timeout=120, skip_prompt=True, skip_special_tokens=True)
+    streamer = TextIteratorStreamer(tokenizer, timeout=300, skip_prompt=True, skip_special_tokens=True)
     generate_kwargs = dict(
         model_inputs,
         streamer=streamer,

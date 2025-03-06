@@ -58,12 +58,12 @@ cd /home/HwHiAiUser/Downloads
 
 给CANN包添加执行权限。
 ```bash
-chmod +x ./Ascend-cann-toolkit_8.0.RC2.alpha003_linux-aarch64.run
+chmod +x ./Ascend-cann-toolkit_8.0.RC3.alpha002_linux-aarch64.run
 ```
 
 执行以下命令升级软件。
 ```bash
-./Ascend-cann-toolkit_8.0.RC2.alpha003_linux-aarch64.run --install --install-for-all
+./Ascend-cann-toolkit_8.0.RC3.alpha002_linux-aarch64.run --install --install-for-all
 ```
 
 进入安装流程，根据回显页面输入**y**或**Y**接受协议，输入其他任意字符为拒绝协议，确定接受协议后开始安装。安装完成后，若显示如下信息，则说明软件安装成功。
@@ -104,12 +104,12 @@ cd /home/HwHiAiUser/Downloads
 
 给kernels包添加执行权限。
 ```bash
-chmod +x ./Ascend-cann-kernels-310b_8.0.RC2.alpha003_linux.run
+chmod +x ./Ascend-cann-kernels-310b_8.0.RC3.alpha002_linux.run
 ```
 
 执行以下命令升级软件。
 ```bash
-./Ascend-cann-kernels-310b_8.0.RC2.alpha003_linux.run --install --install-for-all
+./Ascend-cann-kernels-310b_8.0.RC3.alpha002_linux.run --install --install-for-all
 ```
 
 #### 5.2.2 MindSpore升级
