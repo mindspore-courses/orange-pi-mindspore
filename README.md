@@ -18,6 +18,7 @@
 |[Qwen1.5-0.5b](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/14-qwen1.5-0.5b)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[TinyLlama-1.1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/15-tinyllama)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[DctNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/16-DctNet)  |8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[DeepSeek-R1-Distill-Qwen-1.5B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/17-DeepSeek-R1-Distill-Qwen-1.5B)  |8.0.RC3.alpha002  | 2.4.10/2.5.0| 20T24G |
 
 
 #### 当前香橙派离线推理支持的模型如下：
