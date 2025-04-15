@@ -8,10 +8,10 @@ from mindspore._c_expression import disable_multi_thread
 
 disable_multi_thread()
 
-# Loading the tokenizer and model from Hugging Face's model hub.
-model_id = "openbmb/MiniCPM3-4B"
-tokenizer = MiniCPM3Tokenizer.from_pretrained(model_id, ms_dtype=mindspore.float16)
-model = MiniCPM3ForCausalLM.from_pretrained(model_id, ms_dtype=mindspore.float16)
+# Loading the tokenizer and model from Modelers's model hub.
+model_id = "MindSpore-Lab/MiniCPM3-4B-FP16"
+tokenizer = MiniCPM3Tokenizer.from_pretrained(model_id, mirror='modelers', ms_dtype=mindspore.float16)
+model = MiniCPM3ForCausalLM.from_pretrained(model_id, mirror='modelers', ms_dtype=mindspore.float16)
 
 system_prompt = "You are a helpful and friendly chatbot"
 
