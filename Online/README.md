@@ -44,7 +44,7 @@
 
 步骤1 将Micro SD卡插入读卡器，并将读卡器插入PC。
 
-![environment-setup-1-1](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-online-infer/images/environment_setup_1-1.jpg)
+![environment-setup-1-1](../images/environment_setup_1-1.jpg)
 
 #### 1.2 下载Ubuntu镜像
 
