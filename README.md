@@ -60,7 +60,7 @@
 |[DeepSeek-Janus-Pro-1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/18-DeepSeek-Janus-Pro-1B)  | 推理 | 8.0.RC3.alpha002/8.0.0beta1 | 2.4.10/2.5.0| 20T24G |
 |[MiniCPM3-4B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/19-MiniCPM3)  | 推理 | 8.0.0beta1 | 2.5.0| 20T24G |
 
-> 注：在线推理案例指导请参考Online文件夹中的README文档
+> 注：在线推理案例指导请参考Online/inference文件夹中的README文档
 
 ### 离线推理（Offline）
 | 模型名 | 支持CANN版本 | 支持Mindspore版本 | 支持的香橙派开发板型号 |
