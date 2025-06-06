@@ -5,16 +5,16 @@
 ## 目录
 
 - [orange-pi-mindspore](#orange-pi-mindspore)
-    - [目录](#目录)
-    - [昇思MindSpore香橙派能力介绍](#昇思mindspore香橙派能力介绍)
-    - [最新动态](#最新动态)
-    - [学习资源](#学习资源)
-    - [代码仓分支和版本兼容](#代码仓分支和版本兼容)
-    - [案例与模型清单](#案例与模型清单)
-        - [基于MindSpore开发（Online）](#当前香橙派在线推理支持的模型如下)
-        - [离线推理（Offline）](#当前香橙派离线推理支持的模型如下)
-    - [贡献指南](#贡献指南)
-    - [问题答疑](#问题答疑)
+  - [目录](#目录)
+  - [昇思MindSpore香橙派能力介绍](#昇思mindspore香橙派能力介绍)
+  - [最新动态](#最新动态)
+  - [代码仓分支和版本兼容](#代码仓分支和版本兼容)
+  - [案例与模型清单](#案例与模型清单)
+    - [基于MindSpore开发（Online）](#基于mindspore开发online)
+    - [离线推理（Offline）](#离线推理offline)
+  - [学习资源](#学习资源)
+  - [贡献指南](#贡献指南)
+  - [问题答疑](#问题答疑)
 ## 昇思MindSpore香橙派能力介绍
 
 - 开发友好：动态图易用性提升，类huggingface风格降低开发调试门槛
@@ -32,9 +32,9 @@
 
 | branch | Online/Offline | CANN toolkit/kernel | MindSpore |
 | :----- |:----- |:----- |:----- |
-| r0.1 | Online | 8.0.0beta1 | 2.5.0 |
-| r0.1 | Online | 8.0.RC3.alpha002 | 2.4.10 |
-| r0.1 | Offline | 8.0.RC3.alpha002 | 2.2.14 |
+| r1.0 | Online | 8.0.0beta1 | 2.5.0 |
+| r1.0 | Online | 8.0.RC3.alpha002 | 2.4.10 |
+| r1.0 | Offline | 8.0.RC3.alpha002 | 2.2.14 |
 
 ## 案例与模型清单
 ### 基于MindSpore开发（Online）
