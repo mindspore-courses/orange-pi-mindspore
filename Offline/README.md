@@ -39,13 +39,13 @@ https://www.mindspore.cn/tutorials/application/zh-CN/r2.3.0rc2/cv/resnet50.html
 
 ResNet网络介绍、数据集准备和加载、网络构建、模型训练与评估等都有详细说明。
 
-![1](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/1.png)
+![1](./images/1.png)
 
 ## 2.3 模型训练
 
 将2.2环节下载的训练代码文档上传到ModelArts开发平台。
 
-![2](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/2.png)
+![2](./images/2.png)
 
 **训练前修改部分代码：**
 
@@ -55,7 +55,7 @@ ResNet网络介绍、数据集准备和加载、网络构建、模型训练与�
 
     %env no_proxy='a.test.com,127.0.0.1,2.2.2.2'
 
-![3](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/3.png)
+![3](./images/3.png)
 
 **步骤 2** 添加mindir模型导出代码
 
@@ -65,15 +65,15 @@ ResNet网络介绍、数据集准备和加载、网络构建、模型训练与�
     ms.export(net, inputs, file_name= "resnet50", file_format= "MINDIR")
 
 
-![4](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/4.png)
+![4](./images/4.png)
 
 在云环境上运行notebook文档，生成MINDIR模型文件。
 
-![5](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/5.png)
+![5](./images/5.png)
 
 右键下载MINDIR模型文件至本地。
 
-![6](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/6.png)
+![6](./images/6.png)
 
 # 3 OrangePi AIpro上离线推理
 
@@ -91,7 +91,7 @@ https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/infer/03-Re
 
 在“/home/HwHiAiUser/samples/noteboooks”目录下创建ResNet50_2.2.14文件夹，将训练获得的mindir模型文件放入该文件夹。
 
-![7](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/7.png)
+![7](./images/7.png)
 
 **步骤 2** mindir模型文件转换为om模型
 
@@ -100,7 +100,7 @@ https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/infer/03-Re
     #获取bash.sh文件
     wget https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/package/bash.sh
 
-![8](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/8.png)
+![8](./images/8.png)
 
     #执行bash.sh文件
     source bash.sh /home/HwHiAiUser/samples/notebooks/ResNet50_2.2.14/resnet50.mindir resnet50
@@ -113,7 +113,7 @@ https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/infer/03-Re
 
 运行完成后生成的om文件和bash.sh文件同目录。
 
-![9](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/9.png)
+![9](./images/9.png)
 
 ## 3.3 创建推理项目文件夹
 
@@ -134,21 +134,21 @@ https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/infer/03-Re
 
 打开notebook运行环境，可以看到创建的ResNet50项目文件夹。
 
-![10](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/10.png)
+![10](./images/10.png)
 
-![11](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/11.png)
+![11](./images/11.png)
 
 **步骤 2** 修改推理代码
 
 打开main_resnet50.ipynb文档，在下载环节，注释掉om文件下载的代码，保留数据集下载的代码。
 
-![12](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/12.png)
+![12](./images/12.png)
 
 **步骤 3** 执行推理应用
 
 运行main_resnet50.ipynb文档，进行图像分类推理应用。
 
-![13](https://mindspore-courses.obs.cn-north-4.myhuaweicloud.com/orange-pi-mindspore/images/13.png)
+![13](./images/13.png)
 
 **实验总结**
 
