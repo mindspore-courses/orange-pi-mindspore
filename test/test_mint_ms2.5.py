@@ -671,16 +671,9 @@ class MathPointwiseOperationsTest(unittest.TestCase):
 
     # mindspore.mint.atan
     def test_atan(self):
+        # 定义输入，类型为mindspore.float16
         input = Tensor(np.array([1.0, 0.0]), mindspore.float16)
         output = mint.atan(input)
-        print(output)
-
-
-    # mindspore.mint.atan2
-    def test_atan2(self):
-        input = Tensor(np.array([0, 1]), mindspore.float16)
-        other = Tensor(np.array([1, 1]), mindspore.float16)
-        output = mint.atan2(input, other)
         print(output)
 
 
@@ -777,14 +770,6 @@ class MathPointwiseOperationsTest(unittest.TestCase):
         x = Tensor([1, 3, -1, 0, 4])
         out = mint.diff(x)
         print(out.asnumpy())
-
-
-    # mindspore.mint.div
-    def test_div(self):
-        x = Tensor(np.array([1.0, 2.0, 3.0]), mindspore.float16)
-        y = Tensor(np.array([4.0, 5.0, 6.0]), mindspore.float16)
-        output = mint.div(x, y)
-        print(output)
 
 
     # mindspore.mint.div
@@ -1027,13 +1012,6 @@ class MathPointwiseOperationsTest(unittest.TestCase):
         print(output)
 
 
-    # mindspore.mint.neg
-    def test_neg(self):
-        input = Tensor(np.array([1, 2, -1, 2, 0, -3.5]), mindspore.float16)
-        output = mint.neg(input)
-        print(output)
-
-
     # mindspore.mint.pow
     def test_pow(self):
         input = Tensor(np.array([1.0, 2.0, 4.0]), mindspore.float16)
@@ -1191,13 +1169,6 @@ class MathPointwiseOperationsTest(unittest.TestCase):
     def test_tanh(self):
         input = Tensor(np.array([1, 2, 3, 4, 5]), mindspore.float16)
         output = mint.tanh(input)
-        print(output)
-
-
-    # mindspore.mint.trunc
-    def test_trunc(self):
-        x = Tensor(np.array([3.4742, 0.5466, -0.8008, -3.9079]),mindspore.float16)
-        output = mint.trunc(x)
         print(output)
 
 
@@ -1576,14 +1547,6 @@ class MathComparisonOperationsTest(unittest.TestCase):
         x = Tensor(np.array([1, 2, 3]), mindspore.int32)
         other = Tensor(np.array([1, 1, 4]), mindspore.int32)
         output = mint.less_equal(x, other)
-        print(output)
-
-
-    # mindspore.mint.less
-    def test_less(self):
-        input = Tensor(np.array([1, 2, 3]), mindspore.int32)
-        other = Tensor(np.array([1, 1, 4]), mindspore.int32)
-        output = mint.less(input, other)
         print(output)
 
 

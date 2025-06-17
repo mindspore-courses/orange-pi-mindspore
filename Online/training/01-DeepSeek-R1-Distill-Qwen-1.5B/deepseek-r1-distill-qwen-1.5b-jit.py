@@ -2,12 +2,9 @@ import gradio as gr
 import mindspore
 from mindnlp.transformers import AutoTokenizer, AutoModelForCausalLM, StaticCache
 from mindnlp.core import ops
-from mindnlp.configs import set_pyboost, ON_ORANGE_PI
-from mindnlp.quant.smooth_quant import quantize, w8x8  
+from mindnlp.configs import set_pyboost, ON_ORANGE_PI 
 import time
 import numpy as np
-import os
-
 
 # ---------------------------- 环境与模型初始化 -----------------------------
 
@@ -22,7 +19,7 @@ if ON_ORANGE_PI:
     )
 
 # 生成参数配置
-NUM_TOKENS_TO_GENERATE = 100  # 每个输入要生成的 token 数量
+NUM_TOKENS_TO_GENERATE = 512  # 每个输入要生成的 token 数量
 TEMPERATURE = 0.8            # 温度参数（控制生成多样性）
 TOP_P = 0.8                  # Top‑p 采样阈值
 
@@ -139,6 +136,7 @@ def generate_completion(prompt: str) -> str:
 
     # 自回归生成循环
     cache_position = mindspore.tensor([seq_length + 1])
+    partial_message = ""
     for step in range(1, NUM_TOKENS_TO_GENERATE):
         t_start = time.time()
         next_token = decode_one_tokens(
@@ -150,8 +148,12 @@ def generate_completion(prompt: str) -> str:
         t_elapsed = time.time() - t_start
         print(f"[Token {step:02d}] {t_elapsed:.4f}s")  # 打印单步生成耗时
 
-    text = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
-    return text
+        if tokenizer.eos_token_id in next_token.int()[0]:  # Breaking the loop if the stop token is generated.
+            break
+        new_word = tokenizer.decode(next_token.int()[0], skip_special_tokens=True)
+
+        partial_message += new_word
+        yield partial_message
 
 # ---------------------------- Gradio 界面 -----------------------------
 
