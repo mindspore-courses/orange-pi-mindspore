@@ -95,12 +95,12 @@ __aicore__ inline void MatmulKernel<aType, bType, cType, biasType>::Process(Asce
     matmulObj.SetTensorA(aGlobal);
     matmulObj.SetTensorB(bGlobal);
     matmulObj.SetBias(biasGlobal);
-    matmulObj.IterateAll(cGlobal);
+    matmulObj.IterateAll(cGlobal); // https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/82RC1alpha002/API/ascendcopapi/atlasascendc_api_07_0640.html
     matmulObj.End();
 }
 
 /**
-  * @brief  Calculate the gm offset based on the blockidx.
+  * @brief  Calculate the gm offset based on the blockidx.最核心的矩阵相乘索引计算代码 https://www.bilibili.com/video/BV161pneGERe
   * @param  blockIdx: Current Core blockidx.
   * @param  tiling: Matmul tiling data.
   * @param  offsetA: Gm offset of A matrix.

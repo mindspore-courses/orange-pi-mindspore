@@ -36,7 +36,7 @@ def verify_result(output, golden):
              abs(output_data - golden_data) / golden_data))
         if index == 100:
             break
-    error_ratio = float(different_element_indexes.size) / golden.size
+    error_ratio = float(different_element_indexes.size) / golden.size # 计算累积误差不能大于设定阈值
     print("error ratio: %.4f, tolrence: %.4f" % (error_ratio, error_tol))
     return error_ratio <= error_tol
 
