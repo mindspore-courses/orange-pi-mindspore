@@ -77,7 +77,7 @@ private:
 
 extern "C" __global__ __aicore__ void add_custom(GM_ADDR x, GM_ADDR y, GM_ADDR z, GM_ADDR workspace, GM_ADDR tiling)
 {
-    GET_TILING_DATA(tiling_data, tiling);
+    GET_TILING_DATA(tiling_data, tiling); // 算子直调的时候不需要拆包，这里framework则需要规范的打包一个GM_ADDRGM_ADDR
     KernelAdd op;
     op.Init(x, y, z, tiling_data.totalLength, tiling_data.tileNum);
     op.Process();

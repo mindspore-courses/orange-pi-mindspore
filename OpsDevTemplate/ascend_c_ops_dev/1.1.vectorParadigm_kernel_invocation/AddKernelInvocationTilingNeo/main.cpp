@@ -16,14 +16,13 @@
 #include "tikicpulib.h"
 extern "C" __global__ __aicore__ void add_custom(GM_ADDR x, GM_ADDR y, GM_ADDR z, AddCustomTilingData tiling);
 #endif
-
+// #define ASCENDC_CPU_DEBUG 1
 int32_t main(int32_t argc, char *argv[])
 {
     uint32_t blockDim = 8;
-    size_t tilingSize = 2 * sizeof(uint32_t);
-    size_t inputByteSize = 8 * 2048 * sizeof(uint16_t);
+    size_t tilingSize = 2 * sizeof(uint32_t); // 数据分片大小，用于AddCustomTilingData结构体数据切分给不同卡计算偏移量取出来值，然后异步计算SIMD
+    size_t inputByteSize = 8 * 2048 * sizeof(uint16_t); // x = np.random.uniform(1, 100, [8, 2048]).astype(np.float16)
     size_t outputByteSize = 8 * 2048 * sizeof(uint16_t);
-
 #ifdef ASCENDC_CPU_DEBUG
     uint8_t *tiling = (uint8_t *)AscendC::GmAlloc(tilingSize);
     ReadFile("./input/input_tiling.bin", tilingSize, tiling, tilingSize);
@@ -34,7 +33,7 @@ int32_t main(int32_t argc, char *argv[])
     ReadFile("./input/input_x.bin", inputByteSize, x, inputByteSize);
     ReadFile("./input/input_y.bin", inputByteSize, y, inputByteSize);
 
-    AscendC::SetKernelMode(KernelMode::AIV_MODE);
+    AscendC::SetKernelMode(KernelMode::AIV_MODE); // 矢量算子需要设置内核模式为AIV模式
 
     ICPU_RUN_KF(add_custom, blockDim, x, y, z,
                 *reinterpret_cast<AddCustomTilingData *>(tiling)); // use this macro for cpu debug
@@ -46,6 +45,7 @@ int32_t main(int32_t argc, char *argv[])
     AscendC::GmFree((void *)z);
     AscendC::GmFree((void *)tiling);
 #else
+    // AscendCL 初始化
     CHECK_ACL(aclInit(nullptr));
     int32_t deviceId = 0;
     CHECK_ACL(aclrtSetDevice(deviceId));
@@ -58,26 +58,27 @@ int32_t main(int32_t argc, char *argv[])
 
     CHECK_ACL(aclrtMallocHost((void **)(&tiling), tilingSize));
     ReadFile("./input/input_tiling.bin", tilingSize, tiling, tilingSize);
-
+    // 分配Host内存
     CHECK_ACL(aclrtMallocHost((void **)(&xHost), inputByteSize));
     CHECK_ACL(aclrtMallocHost((void **)(&yHost), inputByteSize));
     CHECK_ACL(aclrtMallocHost((void **)(&zHost), outputByteSize));
     CHECK_ACL(aclrtMalloc((void **)&xDevice, inputByteSize, ACL_MEM_MALLOC_HUGE_FIRST));
     CHECK_ACL(aclrtMalloc((void **)&yDevice, inputByteSize, ACL_MEM_MALLOC_HUGE_FIRST));
     CHECK_ACL(aclrtMalloc((void **)&zDevice, outputByteSize, ACL_MEM_MALLOC_HUGE_FIRST));
-
+    // 初始化Host内存数据
     ReadFile("./input/input_x.bin", inputByteSize, xHost, inputByteSize);
     ReadFile("./input/input_y.bin", inputByteSize, yHost, inputByteSize);
-
+    // 分配Deice内存并拷贝数据到Device
     CHECK_ACL(aclrtMemcpy(xDevice, inputByteSize, xHost, inputByteSize, ACL_MEMCPY_HOST_TO_DEVICE));
     CHECK_ACL(aclrtMemcpy(yDevice, inputByteSize, yHost, inputByteSize, ACL_MEMCPY_HOST_TO_DEVICE));
-
-    ACLRT_LAUNCH_KERNEL(add_custom)(blockDim, stream, xDevice, yDevice, zDevice, tiling);
-    CHECK_ACL(aclrtSynchronizeStream(stream));
-
+    // “内核调用符”三尖括号本质上重载了这个异步函数，add_custom<<<blockDim, nullptr, stream>>>(xDevice, yDevice, zDevice, tiling);扔进去计算任务丢列
+    ACLRT_LAUNCH_KERNEL(add_custom)(blockDim, stream, xDevice, yDevice, zDevice,
+                                    tiling);
+    CHECK_ACL(aclrtSynchronizeStream(stream)); // 核函数的调用是异步的，核函数的调用结束后，控制权立刻返回给主机端，可以调用以下aclrtSynchronizeStream函数来强制主机端程序等待所有任务队列里核函数执行完毕。
+    // 拷贝Device结果数据到Host
     CHECK_ACL(aclrtMemcpy(zHost, outputByteSize, zDevice, outputByteSize, ACL_MEMCPY_DEVICE_TO_HOST));
     WriteFile("./output/output_z.bin", zHost, outputByteSize);
-
+    // 释放申请的资源
     CHECK_ACL(aclrtFree(xDevice));
     CHECK_ACL(aclrtFree(yDevice));
     CHECK_ACL(aclrtFree(zDevice));

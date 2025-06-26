@@ -12,7 +12,7 @@
 #include <cstdint>
 
 struct AddCustomTilingData {
-    uint32_t totalLength;
-    uint32_t tileNum;
+    uint32_t totalLength; // 每个核的总长度
+    uint32_t tileNum; // 每个核要分几个小块
 };
 #endif
