@@ -19,7 +19,7 @@ if ON_ORANGE_PI:
     )
 
 # 生成参数配置
-NUM_TOKENS_TO_GENERATE = 512  # 每个输入要生成的 token 数量
+NUM_TOKENS_TO_GENERATE = 100  # 每个输入要生成的 token 数量
 TEMPERATURE = 0.8            # 温度参数（控制生成多样性）
 TOP_P = 0.8                  # Top‑p 采样阈值
 
