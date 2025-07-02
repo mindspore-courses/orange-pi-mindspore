@@ -45,7 +45,7 @@
 |[Qwen1.5-0.5b](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/14-qwen1.5-0.5b)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[TinyLlama-1.1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/15-tinyllama)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[DctNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/16-DctNet)  |8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[DeepSeek-R1-Distill-Qwen-1.5B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/17-DeepSeek-R1-Distill-Qwen-1.5B) | 8.0.RC3.alpha002  | 2.4.10/2.5.0| 20T24G |
+|[DeepSeek-R1-Distill-Qwen-1.5B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/17-DeepSeek-R1-Distill-Qwen-1.5B) | 8.0.RC3.alpha002/8.0.0.beta1/8.1.RC1.beta1  | 2.4.10/2.5.0/2.6.0| 20T24G |
 |[DeepSeek-Janus-Pro-1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/18-DeepSeek-Janus-Pro-1B) | 8.0.RC3.alpha002/8.0.0beta1 | 2.4.10/2.5.0| 20T24G |
 |[MiniCPM3-4B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/19-MiniCPM3) | 8.0.0beta1 | 2.5.0| 20T24G |
 
@@ -53,8 +53,8 @@
 
 | 模型名 | CANN版本 | Mindspore版本 | 香橙派开发板型号 |
 | :----- |:----- |:----- |:-----|
-| [DeepSeek-R1-Distill-Qwen-1.5B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/training/01-DeepSeek-R1-Distill-Qwen-1.5B) | 8.0.0.beta1  | 2.5.0 | 20T24G |
-|[minGPT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/training/02-minGPT)| 8.1RC1.beta1  | 2.6.0 | 20T24G |
+| [DeepSeek-R1-Distill-Qwen-1.5B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/training/01-DeepSeek-R1-Distill-Qwen-1.5B) | 8.0.0.beta1/8.1.RC1.beta1  | 2.5.0/2.6.0 | 20T24G |
+|[minGPT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/training/02-minGPT)| 8.1.RC1.beta1  | 2.6.0 | 20T24G |
 |[BERT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/training/03-BERT)| 8.0.0.beta1  | 2.5.0 | 20T24G |
 
 ### 第三方应用案例(community)
