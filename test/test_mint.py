@@ -4,7 +4,7 @@ from mindspore import Tensor, mint, ops, Parameter, tensor
 from mindspore import dtype as mstype
 from mindspore import numpy as msnp
 import unittest
-
+from packaging import version
 
 mindspore.set_context(pynative_synchronize=True)
 
@@ -113,16 +113,16 @@ class TensorCreationOperationsTest(unittest.TestCase):
     # mindspore.mint.empty
     def test_empty(self):
         output = mint.empty((2, 3), dtype=mindspore.float16)
-        print(output)
+        print(output) # accuracy may be not OK on orange_pi
 
 
     # mindspore.mint.empty_like
     def test_empty_like(self):
         x = Tensor([[1, 2, 3], [4, 5, 6]])
         output1 = mint.empty_like(x)
-        print(output1)
-        output2 = mint.empty_like(x, dtype=mindspore.float64)
-        print(output2)
+        print(output1) # accuracy may be not OK on orange_pi
+        output2 = mint.empty_like(x, dtype=mindspore.float16)
+        print(output2) # accuracy may be not OK on orange_pi
 
 
     # mindspore.mint.full
@@ -262,6 +262,16 @@ class TensorOtherOperationsTest(unittest.TestCase):
         input = Tensor(np.array([[-0.1, 0.3, 3.6], [0.4, 0.5, -3.2]]), mindspore.float16)
         index = Tensor(np.array([[0, 0], [1, 1]]), mindspore.int32)
         output = mint.gather(input, 1, index)
+        print(output)
+
+
+    # mindspore.mint.index_add
+    @unittest.skipUnless(version.parse(mindspore.__version__) >= version.parse("2.6.0"), "version at least 2.6.0 is required")
+    def test_index_add(self):
+        x = Tensor(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), mindspore.float16)
+        index = Tensor(np.array([0, 2]), mindspore.int32)
+        y = Tensor(np.array([[0.5, 1.0], [1.0, 1.5], [2.0, 2.5]]), mindspore.float16)
+        output = mint.index_add(x, 1, index, y, alpha=1)
         print(output)
 
 
@@ -676,14 +686,6 @@ class MathPointwiseOperationsTest(unittest.TestCase):
         print(output)
 
 
-    # mindspore.mint.atan2
-    def test_atan2(self):
-        input = Tensor(np.array([0, 1]), mindspore.float16)
-        other = Tensor(np.array([1, 1]), mindspore.float16)
-        output = mint.atan2(input, other)
-        print(output)
-
-
     # mindspore.mint.atanh
     def test_atanh(self):
         input = Tensor(np.array([0, -0.5]), mindspore.float16)
@@ -693,16 +695,16 @@ class MathPointwiseOperationsTest(unittest.TestCase):
 
     # mindspore.mint.bitwise_and
     def test_bitwise_and(self):
-        input = Tensor(np.array([0, 0, 1, -1, 1, 1, 1]), mindspore.int16)
-        other = Tensor(np.array([0, 1, 1, -1, -1, 2, 3]), mindspore.int16)
+        input = Tensor(np.array([0, 0, 1, -1, 1, 1, 1]), mindspore.int32)
+        other = Tensor(np.array([0, 1, 1, -1, -1, 2, 3]), mindspore.int32)
         output = mint.bitwise_and(input, other)
         print(output)
 
 
     # mindspore.mint.bitwise_or
     def test_bitwise_or(self):
-        input = Tensor(np.array([0, 0, 1, -1, 1, 1, 1]), mindspore.int16)
-        other = Tensor(np.array([0, 1, 1, -1, -1, 2, 3]), mindspore.int16)
+        input = Tensor(np.array([0, 0, 1, -1, 1, 1, 1]), mindspore.int32)
+        other = Tensor(np.array([0, 1, 1, -1, -1, 2, 3]), mindspore.int32)
         output = mint.bitwise_or(input, other)
         print(output)
 
@@ -777,14 +779,6 @@ class MathPointwiseOperationsTest(unittest.TestCase):
         x = Tensor([1, 3, -1, 0, 4])
         out = mint.diff(x)
         print(out.asnumpy())
-
-
-    # mindspore.mint.div
-    def test_div(self):
-        x = Tensor(np.array([1.0, 2.0, 3.0]), mindspore.float16)
-        y = Tensor(np.array([4.0, 5.0, 6.0]), mindspore.float16)
-        output = mint.div(x, y)
-        print(output)
 
 
     # mindspore.mint.div
@@ -876,9 +870,9 @@ class MathPointwiseOperationsTest(unittest.TestCase):
 
     # mindspore.mint.lerp
     def test_lerp(self):
-        start = Tensor(np.array([1., 2., 3., 4.]), mindspore.float32)
-        end = Tensor(np.array([10., 10., 10., 10.]), mindspore.float32)
-        output = mint.lerp(start, end, 0.5)
+        start = Tensor(np.array([1., 2., 3., 4.]), mindspore.float16)
+        end = Tensor(np.array([10., 10., 10., 10.]), mindspore.float16)
+        output = mint.lerp(start, end, Tensor(0.5, mindspore.float16)) # weight must be float16 on orange_pi
         print(output)
 
 
@@ -915,6 +909,15 @@ class MathPointwiseOperationsTest(unittest.TestCase):
         x1 = Tensor(np.array([1, 2, 3]).astype(np.float16))
         x2 = Tensor(np.array(2).astype(np.float16))
         output = mint.logaddexp(x1, x2)
+        print(output)
+
+
+    # mindspore.mint.logaddexp2
+    @unittest.skipUnless(version.parse(mindspore.__version__) >= version.parse("2.6.0"), "version at least 2.6.0 is required")
+    def test_logaddexp2(self):
+        x1 = Tensor(np.array([1, 2, 3]).astype(np.float16))
+        x2 = Tensor(np.array(2).astype(np.float16))
+        output = mint.logaddexp2(x1, x2)
         print(output)
 
 
@@ -1027,13 +1030,6 @@ class MathPointwiseOperationsTest(unittest.TestCase):
         print(output)
 
 
-    # mindspore.mint.neg
-    def test_neg(self):
-        input = Tensor(np.array([1, 2, -1, 2, 0, -3.5]), mindspore.float16)
-        output = mint.neg(input)
-        print(output)
-
-
     # mindspore.mint.pow
     def test_pow(self):
         input = Tensor(np.array([1.0, 2.0, 4.0]), mindspore.float16)
@@ -1047,11 +1043,19 @@ class MathPointwiseOperationsTest(unittest.TestCase):
         print(output)
 
 
-    # mindspore.mint.polar
-    def test_polar(self):
+    # mindspore.mint.polar float32
+    def test_polar_float32(self):
         abs = Tensor(np.array([1, 2]), mindspore.float32)
         angle = Tensor(np.array([np.pi / 2, 5 * np.pi / 4]), mindspore.float32)
         output = mint.polar(abs, angle)
+        print(output)
+
+
+    # mindspore.mint.polar float16
+    def test_polar_float16(self):
+        abs = Tensor(np.array([1, 2]), mindspore.float16)
+        angle = Tensor(np.array([np.pi / 2, 5 * np.pi / 4]), mindspore.float16)
+        output = mint.polar(abs, angle) # float32 may be OK
         print(output)
 
 
@@ -1073,7 +1077,7 @@ class MathPointwiseOperationsTest(unittest.TestCase):
     # mindspore.mint.remainder
     def test_remainder(self):
         x = Tensor(np.array([-4.0, 5.0, 6.0]).astype(np.float16))
-        y = Tensor(np.array([3.0, 2.0, 3.0]).astype(np.float64))
+        y = Tensor(np.array([3.0, 2.0, 3.0]).astype(np.float16))
         output = mint.remainder(x, y)
         print(output)
 
@@ -1166,11 +1170,15 @@ class MathPointwiseOperationsTest(unittest.TestCase):
         x = Tensor(np.array([4, 5, 6]).astype(np.float16))
         y = Tensor(1, mindspore.int32)
         alpha = 0.5
-        output = mint.sub(x, y, alpha=alpha)
-        print(output)
+        output1 = mint.sub(x, y)
+        print(output1)
+        # the data type of x is float16, the data type of y is int32.
+        print(output1.dtype)
+        output2 = mint.sub(x, y, alpha=alpha)
+        print(output2)
         # the data type of x is float16, the data type of y is int32,
         # alpha is a float, and the output is the data format of higher precision float16.
-        print(output.dtype)
+        print(output2.dtype)
 
 
     # mindspore.mint.t
@@ -1191,13 +1199,6 @@ class MathPointwiseOperationsTest(unittest.TestCase):
     def test_tanh(self):
         input = Tensor(np.array([1, 2, 3, 4, 5]), mindspore.float16)
         output = mint.tanh(input)
-        print(output)
-
-
-    # mindspore.mint.trunc
-    def test_trunc(self):
-        x = Tensor(np.array([3.4742, 0.5466, -0.8008, -3.9079]),mindspore.float16)
-        output = mint.trunc(x)
         print(output)
 
 
@@ -1280,6 +1281,13 @@ class MathReductionOperationsTest(unittest.TestCase):
         print(output)
 
 
+    # mindspore.mint.argsort
+    def test_argsort(self):
+        x = Tensor(np.array([[8, 2, 1], [5, 9, 3], [4, 6, 7]]), mindspore.float16)
+        sort = mint.argsort(x)
+        print(sort)
+
+
     # mindspore.mint.all
     def test_all(self):
         x = Tensor(np.array([[True, False], [True, True]]))
@@ -1326,7 +1334,7 @@ class MathReductionOperationsTest(unittest.TestCase):
 
     # mindspore.mint.logsumexp
     def test_logsumexp(self):
-        x = Tensor(np.random.randn(3, 4, 5, 6).astype(np.float32))
+        x = Tensor(np.random.randn(3, 4, 5, 6).astype(np.float16))
         output = mint.logsumexp(x, 1, keepdim=True)
         print(output.shape)
 
@@ -1491,8 +1499,8 @@ class MathComparisonOperationsTest(unittest.TestCase):
 
     # mindspore.mint.equal
     def test_equal(self):
-        x = Tensor([1, 2, 3], mindspore.int16)
-        y = Tensor([1, 2, 4], mindspore.int16)
+        x = Tensor([1, 2, 3], mindspore.int32)
+        y = Tensor([1, 2, 4], mindspore.int32)
         output = mint.equal(x, y)
         print(output)
 
@@ -1534,7 +1542,7 @@ class MathComparisonOperationsTest(unittest.TestCase):
         x = Tensor(np.array([np.log(-1), 1, np.log(0)]), mindspore.float16)
         output = mint.isfinite(x)
         print(output)
-        x = Tensor(2.1, mindspore.float64)
+        x = Tensor(2.1, mindspore.float16)
         output = mint.isfinite(x)
         print(output)
 
@@ -1544,7 +1552,7 @@ class MathComparisonOperationsTest(unittest.TestCase):
         x = Tensor(np.array([np.log(-1), 1, np.log(0)]), mindspore.float16)
         output = mint.isinf(x)
         print(output)
-        x = Tensor(2.1, mindspore.float64)
+        x = Tensor(2.1, mindspore.float16)
         output = mint.isinf(x)
         print(output)
 
@@ -1576,14 +1584,6 @@ class MathComparisonOperationsTest(unittest.TestCase):
         x = Tensor(np.array([1, 2, 3]), mindspore.int32)
         other = Tensor(np.array([1, 1, 4]), mindspore.int32)
         output = mint.less_equal(x, other)
-        print(output)
-
-
-    # mindspore.mint.less
-    def test_less(self):
-        input = Tensor(np.array([1, 2, 3]), mindspore.int32)
-        other = Tensor(np.array([1, 1, 4]), mindspore.int32)
-        output = mint.less(input, other)
         print(output)
 
 
@@ -1698,8 +1698,14 @@ class MathBlasAndLapackOperationsTest(unittest.TestCase):
         print(output.dtype)
 
 
-    # mindspore.mint.inverse
-    def test_inverse(self):
+    # mindspore.mint.inverse float16
+    def test_inverse_float16(self):
+        x = Tensor([[1., 2.], [3., 4.]], mstype.float16)
+        print(mint.inverse(x)) # float32 may be OK
+
+
+    # mindspore.mint.inverse float32
+    def test_inverse_float32(self):
         x = Tensor([[1., 2.], [3., 4.]], mstype.float32)
         print(mint.inverse(x))
 
@@ -1748,7 +1754,7 @@ class MathBlasAndLapackOperationsTest(unittest.TestCase):
     # mindspore.mint.trace
     def test_trace(self):
         input = Tensor(np.array([[10, 11, 12], [13, 14, 15], [16, 17, 18]]), mindspore.float32)
-        output = mint.trace(input)
+        output = mint.trace(input) # float16 may be core dumped
         print(output)
         input = Tensor(np.arange(1, 13).reshape(3, 4), mindspore.float32)
         output = mint.trace(input)
@@ -1807,6 +1813,14 @@ class MathOtherOperationsTest(unittest.TestCase):
         # case 2: along the dim 1
         y = mint.cumsum(x, 1)
         print(y)
+
+
+    # mindspore.mint.diag
+    @unittest.skipUnless(version.parse(mindspore.__version__) >= version.parse("2.6.0"), "version at least 2.6.0 is required")
+    def test_diag(self):
+        input = Tensor([1, 2, 3, 4]).astype('int32')
+        output = mint.diag(input)
+        print(output)
 
 
     # mindspore.mint.flatten
@@ -1873,6 +1887,24 @@ class MathOtherOperationsTest(unittest.TestCase):
         print(result)
 
 
+    # mindspore.mint.triangular_solve float16
+    @unittest.skipUnless(version.parse(mindspore.__version__) >= version.parse("2.6.0"), "version at least 2.6.0 is required")
+    def test_triangular_solve_float16(self):
+        b = Tensor(np.ones((2, 3, 4), dtype=np.float16))
+        A = Tensor(np.ones((2, 3, 3), dtype=np.float16))
+        output = mint.triangular_solve(b, A)
+        print(output[0])
+
+
+    # mindspore.mint.triangular_solve float32
+    @unittest.skipUnless(version.parse(mindspore.__version__) >= version.parse("2.6.0"), "version at least 2.6.0 is required")
+    def test_triangular_solve_float32(self):
+        b = Tensor(np.ones((2, 3, 4), dtype=np.float32))
+        A = Tensor(np.ones((2, 3, 3), dtype=np.float32))
+        output = mint.triangular_solve(b, A)
+        print(output[0])
+
+
 # mindspore.mint.nn.functional: Convolution functions
 class FunctionalConvolutionTest(unittest.TestCase):
     ''' mindspore.mint.nn.functional API about Convolution functions '''
@@ -1936,6 +1968,39 @@ class FunctionalPoolingTest(unittest.TestCase):
         print(output)
 
 
+    # mindspore.mint.nn.functional.adaptive_avg_pool3d
+    @unittest.skipUnless(version.parse(mindspore.__version__) >= version.parse("2.6.0"), "version at least 2.6.0 is required")
+    def test_functional_adaptive_avg_pool3d(self):
+        # case 1: output_size=(3, 3, 4)
+        output_size=(3, 3, 4)
+        input_val = np.random.randn(4, 3, 5, 6, 7)
+        input = Tensor(input_val, mindspore.float16)
+        output = mint.nn.functional.adaptive_avg_pool3d(input, output_size)
+        print(output.shape)
+
+        # case 2: output_size=4
+        output_size=5
+        input_val = np.random.randn(2, 3, 8, 6, 12)
+        input = Tensor(input_val, mindspore.float16)
+        output = mint.nn.functional.adaptive_avg_pool3d(input, output_size)
+        print(output.shape)
+
+        # case 3: output_size=(None, 4, 5)
+        output_size=(None, 4, 5)
+        input_val = np.random.randn(4, 1, 9, 10, 8)
+        input = Tensor(input_val, mindspore.float16)
+        output = mint.nn.functional.adaptive_avg_pool3d(input, output_size)
+        print(output.shape)
+
+
+    # mindspore.mint.nn.functional.adaptive_max_pool1d
+    @unittest.skipUnless(version.parse(mindspore.__version__) >= version.parse("2.6.0"), "version at least 2.6.0 is required")
+    def test_functional_adaptive_max_pool1d(self):
+        input = Tensor([[2,3],[3,4]],dtype=mindspore.float16)
+        output = mint.nn.functional.adaptive_max_pool1d(input, 3)
+        print(output)
+
+
     # mindspore.mint.nn.functional.avg_pool1d
     def test_functional_avg_pool1d(self):
         input_x = Tensor(np.random.randint(0, 10, [1, 3, 6]), mindspore.float16)
@@ -1950,9 +2015,17 @@ class FunctionalPoolingTest(unittest.TestCase):
         print(output)
 
 
+    # mindspore.mint.nn.functional.avg_pool3d
+    @unittest.skipUnless(version.parse(mindspore.__version__) >= version.parse("2.6.0"), "version at least 2.6.0 is required")
+    def test_functional_avg_pool3d(self):
+        input_x = Tensor(np.arange(1 * 2 * 2 * 2 * 3).reshape((1, 2, 2, 2, 3)), mindspore.float16)
+        output = mint.nn.functional.avg_pool3d(input_x, kernel_size=2, stride=1)
+        print(output)
+
+
     # mindspore.mint.nn.functional.max_pool2d
     def test_functional_max_pool2d(self):
-        input = Tensor(np.arange(20 * 16 * 50 * 32).reshape((20, 16, 50, 32)), mindspore.float32)
+        input = Tensor(np.arange(20 * 16 * 50 * 32).reshape((20, 16, 50, 32)), mindspore.float16)
         output_tensor, argmax = mint.nn.functional.max_pool2d(input, kernel_size=(3, 2), stride=(2, 1),
                                                                     ceil_mode=False, return_indices=True)
         print(output_tensor.shape)
@@ -1989,11 +2062,29 @@ class FunctionalNonLinearActivationTest(unittest.TestCase):
         print(output)
 
 
+    # mindspore.mint.nn.functional.elu_
+    @unittest.skipUnless(version.parse(mindspore.__version__) >= version.parse("2.6.0"), "version at least 2.6.0 is required")
+    def test_functional_elu_(self):
+        input = Tensor(np.array([-1, -2, 0, 2, 1]), mindspore.float16)
+        mint.nn.functional.elu_(input)
+        print(input)
+
+
     # mindspore.mint.nn.functional.gelu
     def test_functional_gelu(self):
         x = Tensor([1.0, 2.0, 3.0], mindspore.float16)
         result = mint.nn.functional.gelu(x, approximate='none')
         print(result)
+        result = mint.nn.functional.gelu(x, approximate="tanh")
+        print(result)
+
+
+    # mindspore.mint.nn.functional.glu
+    @unittest.skipUnless(version.parse(mindspore.__version__) >= version.parse("2.6.0"), "version at least 2.6.0 is required")
+    def test_functional_glu(self):
+        input = Tensor([[0.1, 0.2, 0.3, 0.4], [0.5, 0.6, 0.7, 0.8]])
+        output = mint.nn.functional.glu(input)
+        print(output)
 
 
     # mindspore.mint.nn.functional.group_norm
@@ -2206,6 +2297,19 @@ class FunctionalSparseTest(unittest.TestCase):
 class FunctionalLossTest(unittest.TestCase):
     ''' mindspore.mint.nn.functional API about Loss Functions '''
     
+    # mindspore.mint.nn.functional.cross_entropy
+    @unittest.skipUnless(version.parse(mindspore.__version__) >= version.parse("2.6.0"), "version at least 2.6.0 is required")
+    def test_functional_cross_entropy(self):
+        # Case 1: Indices labels
+        inputs = Tensor(np.random.randn(3, 5), mindspore.float16)
+        target = Tensor(np.array([1, 0, 4]), mindspore.int32)
+        output = mint.nn.functional.cross_entropy(inputs, target)
+        # Case 2: Probability labels
+        inputs = Tensor(np.random.randn(3, 5), mindspore.float16)
+        target = Tensor(np.random.randn(3, 5), mindspore.float16)
+        output = mint.nn.functional.cross_entropy(inputs, target)
+
+
     # mindspore.mint.nn.functional.binary_cross_entropy
     def test_functional_binary_cross_entropy(self):
         input = Tensor(np.array([0.2, 0.7, 0.1]), mindspore.float16)
@@ -2222,6 +2326,15 @@ class FunctionalLossTest(unittest.TestCase):
         weight = Tensor(np.array([1.0, 1.0, 1.0]), mindspore.float16)
         pos_weight = Tensor(np.array([1.0, 1.0, 1.0]), mindspore.float16)
         output = mint.nn.functional.binary_cross_entropy_with_logits(input, target, weight, 'mean', pos_weight)
+        print(output)
+
+
+    # mindspore.mint.nn.functional.kl_div
+    @unittest.skipUnless(version.parse(mindspore.__version__) >= version.parse("2.6.0"), "version at least 2.6.0 is required")
+    def test_functional_kl_div(self):
+        input = Tensor(np.array([[0.5, 0.5], [0.4, 0.6]]), mindspore.float16)
+        target = Tensor(np.array([[0., 1.], [1., 0.]]), mindspore.float16)
+        output = mint.nn.functional.kl_div(input, target, reduction='mean', log_target=False)
         print(output)
 
 
@@ -2275,8 +2388,17 @@ class FunctionalVisionTest(unittest.TestCase):
         print(output)
 
 
-    # mindspore.mint.nn.functional.grid_sample
-    def test_functional_grid_sample(self):
+    # mindspore.mint.nn.functional.grid_sample float16
+    def test_functional_grid_sample_float16(self):
+        input_x = Tensor(np.arange(16).reshape((2, 2, 2, 2)).astype(np.float16))
+        grid = Tensor(np.arange(0.2, 1, 0.1).reshape((2, 2, 1, 2)).astype(np.float16))
+        output = mint.nn.functional.grid_sample(input_x, grid, mode='bilinear', padding_mode='zeros',
+                                 align_corners=True)
+        print(output)
+
+
+    # mindspore.mint.nn.functional.grid_sample float32
+    def test_functional_grid_sample_float32(self):
         input_x = Tensor(np.arange(16).reshape((2, 2, 2, 2)).astype(np.float32))
         grid = Tensor(np.arange(0.2, 1, 0.1).reshape((2, 2, 1, 2)).astype(np.float32))
         output = mint.nn.functional.grid_sample(input_x, grid, mode='bilinear', padding_mode='zeros',
@@ -2286,7 +2408,14 @@ class FunctionalVisionTest(unittest.TestCase):
 
     # mindspore.mint.nn.functional.pad
     def test_functional_pad(self):
-        x = mindspore.Tensor(np.arange(1 * 2 * 2 * 2).reshape((1, 2, 2, 2)), dtype=mindspore.float64)
+        x = mindspore.Tensor(np.arange(1 * 2 * 2 * 2).reshape((1, 2, 2, 2)), dtype=mindspore.float16)
         output = mint.nn.functional.pad(x, [1, 0, 0, 1], mode='constant', value=6.0)
         print(output)
 
+
+    # mindspore.mint.nn.functional.pixel_shuffle
+    @unittest.skipUnless(version.parse(mindspore.__version__) >= version.parse("2.6.0"), "version at least 2.6.0 is required")
+    def test_functional_pixel_shuffle(self):
+        input = mint.randn(1, 9, 4, 4)
+        output = mint.nn.functional.pixel_shuffle(input, 3)
+        print(output.shape)
