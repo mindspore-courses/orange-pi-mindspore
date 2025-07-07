@@ -113,8 +113,9 @@ class Trainer:
 
         train_loader = train_loader.batch(config.batch_size, drop_remainder=True)
 
-        # 香橙派训练必须使用设置O2模式的混合精度
-        model = amp.auto_mixed_precision(model, 'O2')
+        # 香橙派训练必须使用设置O2模式的混合精度，具体信息请参考：
+        # https://www.mindspore.cn/docs/zh-CN/r2.6.0/api_python/amp/mindspore.amp.auto_mixed_precision.html#mindspore.amp.auto_mixed_precision
+        model = amp.auto_mixed_precision(model, 'O2') # 挖空
         model.set_train()
         self.iter_num = 0
         self.iter_time = time.time()
@@ -130,9 +131,10 @@ class Trainer:
             loss = mint.nn.functional.cross_entropy(logits.view(-1, logits.shape[-1]), y.view(-1), ignore_index=-1)
             
             # 动态调整loss值
-            return loss_scaler.scale(loss)
-    
-        grad_fn = mindspore.value_and_grad(net_forward, None, self.optimizer.parameters)
+            return loss_scaler.scale(loss) # 挖空
+
+        # 使用value_and_grad获得微分函数grad_fn   
+        grad_fn = mindspore.value_and_grad(net_forward, None, self.optimizer.parameters) # 挖空
 
         while True:
             # 获取下一批数据（x，y），如果需要的话则重新初始化迭代器
@@ -145,10 +147,10 @@ class Trainer:
             
             loss, grads = grad_fn(x, y)
             # 把放大后的loss缩小回原始数值
-            self.loss = loss_scaler.unscale(loss)
+            self.loss = loss_scaler.unscale(loss) # 挖空
             
-            # 判断是否有溢出
-            is_finite = amp.all_finite(grads)
+            # 判断是否有溢出，使用amp.all_finite接口
+            is_finite = amp.all_finite(grads) # 挖空
             if is_finite:
                 unscaled_grads = loss_scaler.unscale(grads)
                 unscaled_grads = clip_by_norm(unscaled_grads, config.grad_norm_clip) # 梯度裁剪
