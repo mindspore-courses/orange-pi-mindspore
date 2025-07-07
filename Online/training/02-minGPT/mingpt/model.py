@@ -283,9 +283,7 @@ class GPT(nn.Cell):
 
         # GPT模型的构建
         tok_emb = self.transformer.wte(idx)  # token embeddings的shape： (b, t, n_embd)
-        pos_emb = self.transformer.wpe(
-            pos
-        )  # position embeddings的shape： (1, t, n_embd)
+        pos_emb = self.transformer.wpe(pos)  # position embeddings的shape： (1, t, n_embd)
 
         x = self.transformer.drop(tok_emb + pos_emb)
         for block in self.h:
