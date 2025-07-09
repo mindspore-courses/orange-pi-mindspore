@@ -14,10 +14,7 @@ def manual_softmax(x, dim=-1):
 
 class NewGELU(nn.Cell):
     def construct(self, x):
-        x = (0.5 * x * (1.0 +
-                        mint.tanh(math.sqrt(2.0 / math.pi) *
-                                  (x + 0.044715 * mint.pow(x, 3.0)
-                                   ))))
+        x = (0.5 * x * (1.0 + mint.tanh(math.sqrt(2.0 / math.pi) * (x + 0.044715 * mint.pow(x, 3.0)))))
         return x
 
 
@@ -38,8 +35,7 @@ class CausalSelfAttention(nn.Cell):
         self.resid_dropout = nn.Dropout(p=config.resid_pdrop)
         # 因果掩码，用于确保注意力仅作用于输入序列的左侧部分
         self.bias = mint.tril(
-            mint.ones((config.block_size, config.block_size),
-                      dtype=ms.int32)
+            mint.ones((config.block_size, config.block_size), dtype=ms.int32)
         ).view(1, 1, config.block_size, config.block_size)
         self.n_head = config.n_head
         self.n_embd = config.n_embd
@@ -49,19 +45,14 @@ class CausalSelfAttention(nn.Cell):
             x.shape
         )  # batch size, sequence length, embedding dimensionality (n_embd)
 
-        # 计算批次中所有头的query, key, values，
-        # 并将头向前移动以使其成为批次维度
+        # 计算批次中所有头的query, key, values，并将头向前移动以使其成为批次维度
         q, k, v = self.c_attn(x).split(self.n_embd, dim=2)
 
-        k = k.view(B, T, self.n_head, C // self.n_head
-                   ).transpose(1, 2)  # (B, nh, T, hs)
-        q = q.view(B, T, self.n_head, C // self.n_head
-                   ).transpose(1, 2)  # (B, nh, T, hs)
-        v = v.view(B, T, self.n_head, C // self.n_head
-                   ).transpose(1, 2)  # (B, nh, T, hs)
+        k = k.view(B, T, self.n_head, C // self.n_head).transpose(1, 2)  # (B, nh, T, hs)
+        q = q.view(B, T, self.n_head, C // self.n_head).transpose(1, 2)  # (B, nh, T, hs)
+        v = v.view(B, T, self.n_head, C // self.n_head).transpose(1, 2)  # (B, nh, T, hs)
 
-        # 因果自注意力；自注意力：(B, nh, T, hs) 与 (B, nh, hs,T) 相乘
-        # -> (B, nh, T, T)
+        # 因果自注意力；自注意力：(B, nh, T, hs) 与 (B, nh, hs,T) 相乘 -> (B, nh, T, T)
         # >>>>>>> 填空1 完成attention计算 <<<<<<< 
         att = _____
         att = att.masked_fill(self.bias[:, :, :T, :T] == 0, float("-inf"))
@@ -146,31 +137,17 @@ class GPT(nn.Cell):
                 {
                     # 名称遵循 HuggingFace 的命名规范
                     # GPT-1
-                    # 117M params
-                    "openai-gpt":
-                        dict(n_layer=12, n_head=12, n_embd=768),
+                    "openai-gpt":  dict(n_layer=12, n_head=12, n_embd=768),   # 117M params
                     # GPT-2 configs
-                    # 124M params
-                    "gpt2":
-                        dict(n_layer=12, n_head=12, n_embd=768),
-                    # 350M params
-                    "gpt2-medium":
-                        dict(n_layer=24, n_head=16, n_embd=1024),
-                    # 774M params
-                    "gpt2-large":
-                        dict(n_layer=36, n_head=20, n_embd=1280),
-                    # 1558M params
-                    "gpt2-xl":
-                        dict(n_layer=48, n_head=25, n_embd=1600),
+                    "gpt2":        dict(n_layer=12, n_head=12, n_embd=768),   # 124M params
+                    "gpt2-medium": dict(n_layer=24, n_head=16, n_embd=1024),  # 350M params
+                    "gpt2-large":  dict(n_layer=36, n_head=20, n_embd=1280),  # 774M params
+                    "gpt2-xl":     dict(n_layer=48, n_head=25, n_embd=1600),  # 1558M params
                     # Gophers
-                    "gopher-44m":
-                        dict(n_layer=8, n_head=16, n_embd=512),
-                    "gpt-mini":
-                        dict(n_layer=6, n_head=6, n_embd=192),
-                    "gpt-micro":
-                        dict(n_layer=4, n_head=4, n_embd=128),
-                    """ >>>>>>> 填空2 添加一个名为gpt-nano的模型，
-                    它有3个block、3个头、词嵌入的维度为48 <<<<<<< """
+                    "gopher-44m":  dict(n_layer=8, n_head=16, n_embd=512),
+                    "gpt-mini":    dict(n_layer=6, n_head=6, n_embd=192),
+                    "gpt-micro":   dict(n_layer=4, n_head=4, n_embd=128),
+                    # >>>>>>> 填空2 添加一个名为gpt-nano的模型，它有3个block、3个头、词嵌入的维度为48 <<<<<<<
                     _____
                 }[config.model_type]
             )
@@ -183,14 +160,11 @@ class GPT(nn.Cell):
             }
         )
 
-        self.h = nn.CellList([Block(config)
-                              for _ in range(config.n_layer)])
+        self.h = nn.CellList([Block(config) for _ in range(config.n_layer)])
         self.ln_f = nn.LayerNorm((config.n_embd,), epsilon=1e-5)
-        self.lm_head = nn.Dense(config.n_embd,
-                                config.vocab_size, has_bias=False)
+        self.lm_head = nn.Dense(config.n_embd, config.vocab_size, has_bias=False)
 
-        # 初始化所有权重，并对残差投影应用一种特殊的缩放初始化方法，
-        # 这与 GPT-2 论文中的做法一致
+        # 初始化所有权重，并对残差投影应用一种特殊的缩放初始化方法，这与 GPT-2 论文中的做法一致
         self.apply(self._init_weights)
         for pn, p in self.parameters_and_names():
             if pn.endswith("c_proj.weight"):
@@ -203,8 +177,7 @@ class GPT(nn.Cell):
                 )
 
         # 打印告参数的数量（请注意，我们不将语言模型头部中的解码器参数计入其中）
-        n_transformer_params = sum(p.numel() for p in
-                                   self.transformer.get_parameters())
+        n_transformer_params = sum(p.numel() for p in self.transformer.get_parameters())
         n_h_params = sum(p.numel() for p in self.h.get_parameters())
         n_params = n_transformer_params + n_h_params
         print("number of parameters: %.2fM" % (n_params / 1e6,))
@@ -307,19 +280,14 @@ class GPT(nn.Cell):
 
     def construct(self, idx):
         b, t = idx.shape
-        assert (t <= self.block_size), \
-            f"Cannot construct sequence of length {t}, " \
-            f"block size is only {self.block_size}"
+        assert (t <= self.block_size), f"Cannot construct sequence of length {t}, block size is only {self.block_size}"
         pos = mint.arange(0, t, dtype=ms.int32).unsqueeze(0)  # (1, t)
 
         # GPT模型的构建
-        # token embeddings的shape： (b, t, n_embd)
-        tok_emb = self.transformer.wte(idx)
-        # position embeddings的shape： (1, t, n_embd)
-        pos_emb = self.transformer.wpe(pos)
+        tok_emb = self.transformer.wte(idx)  # token embeddings的shape： (b, t, n_embd)
+        pos_emb = self.transformer.wpe(pos)  # position embeddings的shape： (1, t, n_embd)
 
-        """ >>>>>>> 填空3 完成模型输入x，x应为token编码与位置编码之和，
-        并通过一个dropout层，防止过拟合 <<<<<<< """
+        # >>>>>>> 填空3 完成模型输入x，x应为token编码与位置编码之和，并通过一个dropout层，防止过拟合 <<<<<<<
         x = _____
 
         for block in self.h:
@@ -330,18 +298,15 @@ class GPT(nn.Cell):
 
         return logits
 
-    def generate(self, idx, max_new_tokens, temperature=1.0,
-                 do_sample=False, top_k=None):
+    def generate(self, idx, max_new_tokens, temperature=1.0, do_sample=False, top_k=None):
         """
-        给定一个索引序列 idx（形状为 (b,t) 的长整型张量），
-        重复执行一个条件序列 max_new_tokens 次，每次将预测结果反馈给模型
+        给定一个索引序列 idx（形状为 (b,t) 的长整型张量），重复执行一个条件序列 max_new_tokens 次，每次将预测结果反馈给模型
         需要确定模型处于验证模式！！！
         """
         for _ in range(max_new_tokens):
             # 如果序列的长度增长过长，我们就必须在达到block_size时对其进行截断。
             idx_cond = (
-                idx if idx.shape[1] <= self.block_size
-                else idx[:, -self.block_size :]
+                idx if idx.shape[1] <= self.block_size else idx[:, -self.block_size :]
             )
             # 构建模型以获取序列中该索引对应的logits
             logits = self(idx_cond)
@@ -354,8 +319,7 @@ class GPT(nn.Cell):
             # 应用 softmax 函数将对数输出转换为（归一化的）概率值
             probs = mint.nn.functional.softmax(logits, dim=-1)
             # 要么从该分布中抽取一个样本，要么选取最有可能的元素
-            """ >>>>>>> 填空4 完成上述代码，抽取样本参考mint.multinomial接口，
-            选取最有可能的元素参考mint.topk接口 <<<<<<< """
+            # >>>>>>> 填空4 完成上述代码，抽取样本参考mint.multinomial接口，选取最有可能的元素参考mint.topk接口 <<<<<<<
             _____
             
             # 将采样的索引添加到运行序列中，并继续进行
