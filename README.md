@@ -44,7 +44,7 @@
 |[ViT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/03-ViT)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[FCN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/04-FCN)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[ShuffleNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/05-ShuffleNet)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[SSD](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/06-SSD)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[SSD](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/06-SSD)| 推理 | 8.1.RC1  | 2.6.0| 8T8G |
 |[RNN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/07-RNN)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[LSTM+CRF](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/08-LSTM%2BCRF)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[GAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/09-GAN)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
