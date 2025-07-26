@@ -11,28 +11,30 @@
 
 | 模型名 | 支持CANN版本 | 支持Mindspore版本 | 支持的香橙派开发板型号 |
 | :----- |:----- |:----- |:-----|
-| [ResNet50](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/02-ResNet50) | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[ViT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/03-ViT)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[FCN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/04-FCN)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[ShuffleNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/05-ShuffleNet)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[SSD](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/06-SSD)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[RNN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/07-RNN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[LSTM+CRF](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/08-LSTM%2BCRF)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[GAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/09-GAN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[DCGAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/10-DCGAN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[Pix2Pix](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/11-Pix2Pix)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[Diffusion](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/12-Diffusion)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[ResNet50_transfer](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/13-ResNet50_transfer)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[Qwen1.5-0.5b](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/14-qwen1.5-0.5b)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[TinyLlama-1.1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/15-tinyllama)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[DctNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/16-DctNet)  |8.0.RC3.alpha002  | 2.4.10| 8T16G |
-
+| [ResNet50](https://github.com/mindspore-courses/orange-pi-mindspore/tree/r1.0/Online/02-ResNet50) | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[ViT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/r1.0/Online/03-ViT)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[FCN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/r1.0/Online/04-FCN)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[ShuffleNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/r1.0/Online/05-ShuffleNet)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[SSD](https://github.com/mindspore-courses/orange-pi-mindspore/tree/r1.0/Online/06-SSD)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[RNN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/r1.0/Online/07-RNN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[LSTM+CRF](https://github.com/mindspore-courses/orange-pi-mindspore/tree/r1.0/Online/08-LSTM%2BCRF)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[GAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/r1.0/Online/09-GAN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[DCGAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/r1.0/Online/10-DCGAN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[Pix2Pix](https://github.com/mindspore-courses/orange-pi-mindspore/tree/r1.0/Online/11-Pix2Pix)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[Diffusion](https://github.com/mindspore-courses/orange-pi-mindspore/tree/r1.0/Online/12-Diffusion)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[ResNet50_transfer](https://github.com/mindspore-courses/orange-pi-mindspore/tree/r1.0/Online/13-ResNet50_transfer)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[Qwen1.5-0.5b](https://github.com/mindspore-courses/orange-pi-mindspore/tree/r1.0/Online/14-qwen1.5-0.5b)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[TinyLlama-1.1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/r1.0/Online/15-tinyllama)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[DctNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/r1.0/Online/16-DctNet)  |8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[DeepSeek-R1-Distill-Qwen-1.5B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/r1.0/Online/17-DeepSeek-R1-Distill-Qwen-1.5B)  |8.0.RC3.alpha002/8.0.0.beta1  | 2.4.10/2.5.0| 20T24G |
+|[DeepSeek-Janus-Pro-1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/r1.0/Online/inference/18-DeepSeek-Janus-Pro-1B) | 8.0.RC3.alpha002/8.0.0beta1 | 2.4.10/2.5.0| 20T24G |
+|[MiniCPM3-4B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/r1.0/Online/inference/19-MiniCPM3) | 8.0.0beta1 | 2.5.0| 20T24G |
 
 
 # 指导文档
 ## 环境搭建指南
 
-[![查看源文件](https://mindspore-website.obs.cn-north-4.myhuaweicloud.com/website-images/master/resource/_static/logo_source.svg)](https://gitee.com/mindspore/docs/blob/master/docs/mindspore/source_zh_cn/orange_pi/environment_setup.md)
+[![查看源文件](https://mindspore-website.obs.cn-north-4.myhuaweicloud.com/website-images/r2.5.0/resource/_static/logo_source.svg)](https://gitee.com/mindspore/docs/blob/r2.5.0/docs/mindspore/source_zh_cn/orange_pi/environment_setup.md)
 
 本章节将介绍如何在OrangePi AIpro上烧录镜像，自定义安装CANN和MindSpore，并配置运行环境。
 
@@ -330,7 +332,7 @@ pip install mindspore-2.4.0-cp39-cp39-linux_aarch64.whl
 ```bash
 # 打开开发板的一个终端，运行如下命令
 cd samples/notebooks/
-git clone https://github.com/mindspore-courses/orange-pi-mindspore.git
+git clone -b r1.0 https://github.com/mindspore-courses/orange-pi-mindspore.git
 ```
 
 步骤2 进入案例目录。
