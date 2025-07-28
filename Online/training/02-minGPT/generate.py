@@ -11,10 +11,6 @@ set_seed(3407)
 # 设置同步，解除注释可以开启
 # mindspore.set_context(pynative_synchronize=True)
 
-# NPU配置
-mindspore.context.set_context(device_target="Ascend")
-mindspore.context.set_context(device_id=0)
-
 # 模型设置
 model_type = 'gpt2'
 assert model_type in {'gpt2', 'gpt2-medium', 'gpt2-large'}
@@ -35,7 +31,8 @@ model = GPT(config)
 # 模型权重加载
 param_dict = mindspore.load_checkpoint(path)
 param_not_load, _ = mindspore.load_param_into_net(model, param_dict)
-print(param_not_load)
+# param_not_load为空，说明所有模型参数都完成加载
+assert len(param_not_load) == 0, f"参数{param_not_load}并未加载至模型，请进行检査"
 print(f"{model_type} 模型权重加载成功")
 
 # 设置O2模式混合精度
@@ -43,7 +40,6 @@ model = amp.auto_mixed_precision(model, 'O2')._backbone
 
 # 开启推理模式
 model.set_train(False)
-
 
 def generate(prompt='', num_samples=10, steps=20, do_sample=False):      
     # 将输入提示标记化为整数输入序列
@@ -72,7 +68,5 @@ def generate(prompt='', num_samples=10, steps=20, do_sample=False):
         
     end_time = time.time()
     print("time cost:", end_time - start_time)
-        
-    
+          
 generate(prompt='Andrej Karpathy, the', num_samples=1, steps=20)
-
