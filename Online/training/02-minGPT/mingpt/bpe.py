@@ -7,7 +7,7 @@ import os
 import json
 import regex as re
 import requests
-import mindspore as ms
+import mindspore
 
 # -----------------------------------------------------------------------------
 
@@ -62,23 +62,6 @@ class Encoder:
         # BPE 合并列表，该列表定义了 BPE 的“树”，其中包含若干元组 (a， b) ，它们将合并为一个词项 ab 。
         self.bpe_ranks = dict(zip(bpe_merges, range(len(bpe_merges))))
         # 用于预分词的拆分模式
-        # 应该添加 re.IGNORECASE 这个参数，这样就能对缩写词的变体（即大写形式）进行合并操作了。——原始的 OpenAI 评论
-        """
-        那么，这个正则表达式到底在寻找什么呢？
-        Python 的 re 模块参考：https://docs.python.org/3/library/re.html
-        - 横线“|”表示“或”，所以 re.findall 会按照匹配的部分从左到右将文本分块
-        - "\'"会将诸如"Andrej's"这样的内容拆分成"(Andrej， 's)"
-        - "？\p{L}"：可选的空格后跟 1 个或多个属于“字母”类别的 Unicode 代码点
-        - "？\p{N}"：可选的空格后跟 1 个或多个属于“数字”类别的 Unicode 代码点
-        - "？[^\s\p{L}\p{N}]+"：可选的空格，然后是 1 个或多个不是空白、字母或数字的字符
-        - "\s+(？!\S)"：1 个或多个空白字符（例如空格、制表符等），除非它们后面是非空白字符
-        所以它会依次消费序列中的空白字符，但会排除序列中的最后一个空白字符。
-        这个最后一个空白字符有机会在前面的模式中匹配早期模式中的可选"？"。
-        - "\s+"：1 个或多个空白字符，可能旨在捕获字符串末尾的完整空白序列
-        简而言之：
-        - 我们对一些常见的撇号构造（"s"、"t"、"re"等）进行了特殊处理，并将其转换为单独的标记然后，我们将字符串按以下顺序分成连续的几部分：
-        1）字母；2）数字；3）非字母数字字符；4）空格。
-        """
         self.pat = re.compile(r"""'s|'t|'re|'ve|'m|'ll|'d| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+""")
         self.cache = {}
 
@@ -249,15 +232,15 @@ class BPETokenizer:
     def __init__(self):
         self.encoder = get_encoder()
 
-    def __call__(self, text, return_tensors='pt'):
+    def __call__(self, text, return_tensors='ms'):
         # 仅使用 MindSpore；这是因为希望与 mindnlp/mindformers 的接口保持一致。
-        assert return_tensors == 'pt'
+        assert return_tensors == 'ms'
         # 目前仅支持单个字符串输入，未来可能会支持字符串列表输入。
         assert isinstance(text, str)
         # 进行编码并创建一个“批次维度”值为 1 的设置
         idx = [self.encoder.encode(text)]
         # 转换为 MindSpore 张量
-        out = ms.tensor(idx, dtype=ms.int32)
+        out = mindspore.tensor(idx, dtype=mindspore.int32)
         return out
 
     def decode(self, idx):
@@ -281,25 +264,8 @@ if __name__ == '__main__':
     print(r['tokens'])
     # ['Hello', '!!', ' I', "'m", ' Andrej', ' Karpathy', '.', ' It', "'s", ' 2022', '.', ' w', '00', 't', ' :', 'D', ' 🤗']
     print("Then we iterate over each chunk and process them in turn...")
-    for part in r['parts']:
-        print(part)
+    print(r['parts'][0])
     # {'token': 'Hello', 'token_bytes': b'Hello', 'token_translated': 'Hello', 'token_merged': ['Hello'], 'token_ix': [15496]}
-    # {'token': '!!', 'token_bytes': b'!!', 'token_translated': '!!', 'token_merged': ['!!'], 'token_ix': [3228]}
-    # {'token': ' I', 'token_bytes': b' I', 'token_translated': 'ĠI', 'token_merged': ['ĠI'], 'token_ix': [314]}
-    # {'token': "'m", 'token_bytes': b"'m", 'token_translated': "'m", 'token_merged': ["'m"], 'token_ix': [1101]}
-    # {'token': ' Andrej', 'token_bytes': b' Andrej', 'token_translated': 'ĠAndrej', 'token_merged': ['ĠAndre', 'j'], 'token_ix': [10948, 73]}
-    # {'token': ' Karpathy', 'token_bytes': b' Karpathy', 'token_translated': 'ĠKarpathy', 'token_merged': ['ĠK', 'arp', 'athy'], 'token_ix': [509, 5117, 10036]}
-    # {'token': '.', 'token_bytes': b'.', 'token_translated': '.', 'token_merged': ['.'], 'token_ix': [13]}
-    # {'token': ' It', 'token_bytes': b' It', 'token_translated': 'ĠIt', 'token_merged': ['ĠIt'], 'token_ix': [632]}
-    # {'token': "'s", 'token_bytes': b"'s", 'token_translated': "'s", 'token_merged': ["'s"], 'token_ix': [338]}
-    # {'token': ' 2022', 'token_bytes': b' 2022', 'token_translated': 'Ġ2022', 'token_merged': ['Ġ2022'], 'token_ix': [33160]}
-    # {'token': '.', 'token_bytes': b'.', 'token_translated': '.', 'token_merged': ['.'], 'token_ix': [13]}
-    # {'token': ' w', 'token_bytes': b' w', 'token_translated': 'Ġw', 'token_merged': ['Ġw'], 'token_ix': [266]}
-    # {'token': '00', 'token_bytes': b'00', 'token_translated': '00', 'token_merged': ['00'], 'token_ix': [405]}
-    # {'token': 't', 'token_bytes': b't', 'token_translated': 't', 'token_merged': ['t'], 'token_ix': [83]}
-    # {'token': ' :', 'token_bytes': b' :', 'token_translated': 'Ġ:', 'token_merged': ['Ġ:'], 'token_ix': [1058]}
-    # {'token': 'D', 'token_bytes': b'D', 'token_translated': 'D', 'token_merged': ['D'], 'token_ix': [35]}
-    # {'token': ' 🤗', 'token_bytes': b' \xf0\x9f\xa4\x97', 'token_translated': 'ĠðŁ¤Ĺ', 'token_merged': ['ĠðŁ', '¤', 'Ĺ'], 'token_ix': [12520, 97, 245]}
     print("and the final outcome is concatenating and flattening all the token_ix:")
     print(r['bpe_idx'])
     # [15496, 3228, 314, 1101, 10948, 73, 509, 5117, 10036, 13, 632, 338, 33160, 13, 266, 405, 83, 1058, 35, 12520, 97, 245]
