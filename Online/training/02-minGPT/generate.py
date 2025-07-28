@@ -32,8 +32,10 @@ model = GPT(config)
 param_dict = mindspore.load_checkpoint(path)
 param_not_load, _ = mindspore.load_param_into_net(model, param_dict)
 # param_not_load为空，说明所有模型参数都完成加载
-assert len(param_not_load) == 0, f"参数{param_not_load}并未加载至模型，请进行检査"
-print(f"{model_type} 模型权重加载成功")
+if len(param_not_load) == 0:
+    print(f"{model_type} 模型权重加载成功")
+else:
+    print(f"[WARNING] 参数{param_not_load}未成功加载，建议排查后再进行实验")
 
 # 设置O2模式混合精度
 model = amp.auto_mixed_precision(model, 'O2')._backbone
@@ -68,5 +70,6 @@ def generate(prompt='', num_samples=10, steps=20, do_sample=False):
         
     end_time = time.time()
     print("time cost:", end_time - start_time)
-          
+           
 generate(prompt='Andrej Karpathy, the', num_samples=1, steps=20)
+
