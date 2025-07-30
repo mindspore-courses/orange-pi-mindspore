@@ -1,0 +1,8 @@
+[submodule "third_party/pybind11"]
+	path = third_party/pybind11
+	url = https://github.com/pybind/pybind11.git
+    tag = v2.13
+[submodule "third_party/samples4ascend"]
+	path = third_party/samples4ascend
+	url = https://gitee.com/ascend/samples.git
+    tag = v0.1-8.0.0.alpha002
