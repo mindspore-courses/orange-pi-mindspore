@@ -10,9 +10,3 @@
 （1）此模型已在中文 NER 数据集 CLUENER2020 上微调，直接推理即可
 （2）模型体积约 390MB，满足 4GB 以下要求  
 
-## 作者信息
-开发者姓名：张子彤
-
-github用户名：ddsfda99
-
-完成实习任务token classification

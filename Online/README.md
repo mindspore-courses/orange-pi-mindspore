@@ -61,7 +61,7 @@
 
 | 案例名称 | CANN版本 | Mindspore版本 | 香橙派开发板型号 |
 | :----- |:----- |:----- |:-----|
-| token classification | 8.0.0.beta1  |2.6.0  |20T24G  |
+| RoBERTaNER | 8.0.0.beta1  |2.6.0  |20T24G  |
 
 ## 学习资源
 
