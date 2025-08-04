@@ -12,20 +12,23 @@
 | 模型名 | 支持CANN版本 | 支持Mindspore版本 | 支持的香橙派开发板型号 |
 | :----- |:----- |:----- |:-----|
 | [ResNet50](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/02-ResNet50) | 8.1.RC1  | 2.6.0| 8T8G |
-|[ViT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/03-ViT)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[FCN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/04-FCN)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[ShuffleNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/05-ShuffleNet)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[ViT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/03-ViT)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[FCN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/04-FCN)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[ShuffleNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/05-ShuffleNet)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[SSD](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/06-SSD)|8.1.RC1  | 2.6.0| 8T8G |
-|[RNN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/07-RNN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[LSTM+CRF](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/08-LSTM%2BCRF)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[GAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/09-GAN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[DCGAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/10-DCGAN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[Pix2Pix](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/11-Pix2Pix)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[Diffusion](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/12-Diffusion)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[ResNet50_transfer](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/13-ResNet50_transfer)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[Qwen1.5-0.5b](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/14-qwen1.5-0.5b)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[TinyLlama-1.1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/15-tinyllama)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[DctNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/16-DctNet)  |8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[RNN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/07-RNN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[LSTM+CRF](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/08-LSTM%2BCRF)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[GAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/09-GAN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[DCGAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/10-DCGAN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[Pix2Pix](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/11-Pix2Pix)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[Diffusion](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/12-Diffusion)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[ResNet50_transfer](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/13-ResNet50_transfer)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[Qwen1.5-0.5b](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/14-qwen1.5-0.5b)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[TinyLlama-1.1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/15-tinyllama)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[DctNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/16-DctNet)  |8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[DeepSeek-R1-Distill-Qwen-1.5B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/17-DeepSeek-R1-Distill-Qwen-1.5B)  |8.0.RC3.alpha002/8.0.0.beta1/8.1.RC1.beta1  | 2.4.10/2.5.0/2.6.0| 20T24G |
+|[DeepSeek-Janus-Pro-1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/18-DeepSeek-Janus-Pro-1B) | 8.0.RC3.alpha002/8.0.0beta1 | 2.4.10/2.5.0| 20T24G |
+|[MiniCPM3-4B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/19-MiniCPM3) | 8.0.0beta1 | 2.5.0| 20T24G |
 
 
 
@@ -403,7 +406,7 @@ cd /home/HwHiAiUser/orange-pi-mindspore/
 步骤1 进入案例目录，以14-qwen1.5-0.5b为例，15号案例类似。
 
 ```bash
-cd /home/HwHiAiUser/orange-pi-mindspore/Online/14-qwen1.5-0.5b
+cd /home/HwHiAiUser/orange-pi-mindspore/Online/inference/14-qwen1.5-0.5b
 ```
 
 **注：首次启动时会自动从镜像站下载模型，如遇网络原因无法下载，可以通过电脑下载后上传到案例目录下的.mindnlp文件夹内的对应目录下。**
@@ -416,8 +419,8 @@ vim qwen1.5-0.5b.py
 tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen1.5-0.5B-Chat", ms_dtype=mindspore.float16)
 model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen1.5-0.5B-Chat", ms_dtype=mindspore.float16)
 # 修改为
-tokenizer = AutoTokenizer.from_pretrained("/home/HwHiAiUser/orange-pi-mindspore-master/Online/14-qwen1.5-0.5b/.mindnlp/model/Qwen/Qwen1.5-0.5B-Chat", ms_dtype=mindspore.float16)
-model = AutoModelForCausalLM.from_pretrained("/home/HwHiAiUser/orange-pi-mindspore-master/Online/14-qwen1.5-0.5b/.mindnlp/model/Qwen/Qwen1.5-0.5B-Chat", ms_dtype=mindspore.float16)
+tokenizer = AutoTokenizer.from_pretrained("/home/HwHiAiUser/orange-pi-mindspore-master/Online/inference/14-qwen1.5-0.5b/.mindnlp/model/Qwen/Qwen1.5-0.5B-Chat", ms_dtype=mindspore.float16)
+model = AutoModelForCausalLM.from_pretrained("/home/HwHiAiUser/orange-pi-mindspore-master/Online/inference/14-qwen1.5-0.5b/.mindnlp/model/Qwen/Qwen1.5-0.5B-Chat", ms_dtype=mindspore.float16)
 ```
 
 步骤3 启动推理程序
