@@ -1,11 +1,11 @@
 # RingMoE遥感图像分类推理案例
 
 ## 案例概述
-本案例演示如何在香橙派AIpro 20T开发板上运行RingMoE遥感图像分类模型的推理任务。通过预训练的OM模型，实现对NWPU-RESISC45数据集中的45类遥感场景进行高效分类。
+本案例演示如何在香橙派AIpro 20T开发板上运行RingMoE遥感图像分类模型的推理任务。通过预训练和微调得到的mindir模型，实现对NWPU-RESISC45数据集中的45类遥感场景进行高效分类。
 
 ## 项目结构说明
 ```bash
-RingMoE/                    # 项目根目录
+RingMoE-Classification/     # 项目根目录
 ├── model/                  # 模型目录
 │   ├──ringmoe_model_variables/data_0 
 │   └── ringmoe_model_graph.mindir     # 推理模型
@@ -22,7 +22,7 @@ RingMoE/                    # 项目根目录
 
 ## 环境要求
 ### 硬件配置
-- 香橙派AIpro 20T24G开发板（配备昇腾AI处理器）
+- 香橙派AIpro 20T24G开发板
 
 ### 软件版本
 | 组件 | 版本 | 备注 |
@@ -36,8 +36,8 @@ RingMoE/                    # 项目根目录
 - **基础架构**：基于RingMoE的Vision Transformer
 - **输入规格**：224×224 RGB图像
 - **输出类别**：45种遥感场景（NWPU-RESISC45）
-- **模型大小**：2.0G (OM格式)
-- **精度指标**：NWPU-RESISC45测试集准确率3%
+- **模型大小**：2.0G (mindir格式)
+- **精度指标**：NWPU-RESISC45测试集准确率91.63%
 
 ## 运行推理
 
@@ -138,7 +138,6 @@ python3 eval.py
 3. 确保`CLASS_MAP`内填入所有正确类别标签
 
 > **案例优势**：本方案在香橙派AIpro上实现了91.63%精度的遥感图像分类，推理速度达350ms级，展示了边缘设备运行先进视觉模型的能力。
-
 
 
 
