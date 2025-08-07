@@ -34,7 +34,7 @@
 |[ViT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/03-ViT)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[FCN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/04-FCN)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[ShuffleNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/05-ShuffleNet)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[SSD](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/06-SSD)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[SSD](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/06-SSD)|8.1.RC1  | 2.6.0| 8T8G |
 |[RNN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/07-RNN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[LSTM+CRF](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/08-LSTM%2BCRF)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[GAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/09-GAN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
@@ -112,3 +112,4 @@
 ## 问题答疑
 
 如在基于昇思MindSpore+香橙派开发板开发过程中遇到任何问题，欢迎在本代码仓中提交`issue`，定期会有工程师进行答疑。
+
