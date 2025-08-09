@@ -61,7 +61,7 @@
 
 | 案例名称 | CANN版本 | Mindspore版本 | 香橙派开发板型号 |
 | :----- |:----- |:----- |:-----|
-|[Image-to-Text](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/06-Image-to-Text) |8.0.0.beta1   |2.6.0  |8T8G  |
+|[Image-to-Text](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/06-Image-to-Text) |8.0.0.beta1   |2.6.0  |8T16G  |
 
 ## 学习资源
 
