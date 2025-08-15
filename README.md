@@ -40,11 +40,11 @@
 ### 基于MindSpore开发（Online）
 | 模型 | 训练/推理 | CANN版本 | Mindspore版本 | 香橙派开发板型号 |
 | :----- |:----- |:----- |:-----|:-----|
-| [ResNet50](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/02-ResNet50) | 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
+| [ResNet50](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/02-ResNet50) | 推理 | 8.1.RC1  | 2.6.0| 8T8G |
 |[ViT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/03-ViT)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[FCN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/04-FCN)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[ShuffleNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/05-ShuffleNet)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[SSD](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/06-SSD)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[SSD](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/06-SSD)| 推理 | 8.1.RC1  | 2.6.0| 8T8G |
 |[RNN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/07-RNN)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[LSTM+CRF](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/08-LSTM%2BCRF)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[GAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/09-GAN)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
@@ -56,7 +56,7 @@
 |[TinyLlama-1.1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/15-tinyllama)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[DctNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/16-DctNet)  | 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[DeepSeek-R1-Distill-Qwen-1.5B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/17-DeepSeek-R1-Distill-Qwen-1.5B)  | 推理 | 8.0.RC3.alpha002/8.0.0.beta1/8.1.RC1.beta1  | 2.4.10/2.5.0/2.6.0| 20T24G |
-|[DeepSeek-R1-Distill-Qwen-1.5B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/training/17-DeepSeek-R1-Distill-Qwen-1.5B)  | 训练 | 8.0.0.beta1/8.1.RC1.beta1  | 2.5.0/2.6.0 | 20T24G |
+|[DeepSeek-R1-Distill-Qwen-1.5B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/training/01-DeepSeek-R1-Distill-Qwen-1.5B)  | 训练 | 8.0.0.beta1/8.1.RC1.beta1  | 2.5.0/2.6.0 | 20T24G |
 |[DeepSeek-Janus-Pro-1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/18-DeepSeek-Janus-Pro-1B)  | 推理 | 8.0.RC3.alpha002/8.0.0beta1 | 2.4.10/2.5.0| 20T24G |
 |[MiniCPM3-4B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/19-MiniCPM3)  | 推理 | 8.0.0beta1 | 2.5.0| 20T24G |
 
