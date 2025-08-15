@@ -10,6 +10,8 @@ import mindspore
 from mindspore import context, ops
 
 from dct_generator import Generator
+from download import download
+
 
 def camera(network, args, watermark):
     """摄像头推理"""
@@ -190,6 +192,12 @@ if __name__ == "__main__":
 
     logging.info("run_mode:{}\ndevice_type:{}\ndevice_id:{}\nckpt_path:{}\ncamera:{}\nspeed_first:{}\ninput_path:{}\noutput_path:{}\n".format(\
         args.run_mode, args.device_type, args.device_id, args.ckpt_path, args.camera, args.speed_first, args.input_path, args.output_path))
+    
+    # 模型权重下载
+    url = "https://modelers.cn/coderepo/web/v1/file/zhaoyu/DctNet/main/media/dct-net.ckpt"
+    path = args.ckpt_path
+    download(url=url, path=path, replace=True)
+    print(f"模型权重下载成功")
 
     # 加载模型
     network = Generator(img_channels=3)
