@@ -12,7 +12,6 @@ from mindspore import context, ops
 from dct_generator import Generator
 from download import download
 
-
 def camera(network, args, watermark):
     """摄像头推理"""
 
