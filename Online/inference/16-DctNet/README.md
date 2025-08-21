@@ -20,6 +20,11 @@ MindSpore版ckpt权重文件获取地址：https://modelers.cn/models/zhaoyu/Dct
 - opencv-contrib-python == 4.8.0.74
 - moviepy == 1.0.3
 
+## 使用清华镜像加快下载速度
+```bash
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
 ## 使用方法
 
 ```bash
