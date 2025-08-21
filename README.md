@@ -48,7 +48,7 @@
 |[RNN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/07-RNN)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[LSTM+CRF](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/08-LSTM%2BCRF)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[GAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/09-GAN)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[DCGAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/10-DCGAN)|  推理 |8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[DCGAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/10-DCGAN)|  推理 | 8.1.RC1  | 2.6.0| 8T8G |
 |[Pix2Pix](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/11-Pix2Pix)|  推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[Diffusion](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/12-Diffusion)|  推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[ResNet50_transfer](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/13-ResNet50_transfer)|  推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
