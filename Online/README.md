@@ -38,7 +38,7 @@
 |[RNN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/07-RNN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[LSTM+CRF](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/08-LSTM%2BCRF)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[GAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/09-GAN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[DCGAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/10-DCGAN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[DCGAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/10-DCGAN)|8.1.RC1  | 2.6.0| 8T8G |
 |[Pix2Pix](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/11-Pix2Pix)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[Diffusion](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/12-Diffusion)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[ResNet50_transfer](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/13-ResNet50_transfer)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
@@ -61,9 +61,9 @@
 
 | 案例名称 | CANN版本 | Mindspore版本 | 香橙派开发板型号 |
 | :----- |:----- |:----- |:-----|
-| RoBERTaNER | 8.0.0.beta1 | 2.6.0 | 20T24G |
-| SentenceSimilarity | 8.0.0.beta1 | 2.6.0 | 20T24G |
-| Document Question Answering | 8.0.0.beta1 | 2.6.0 | 20T24G |
+| RoBERTaNER | 8.0.0.beta1  |2.6.0  |20T24G  |
+| SentenceSimilarity | 8.0.0.beta1  |2.6.0  |20T24G  |
+| Document Question Answering | 8.0.0.beta1 |2.6.0 |20T24G |
 
 ## 学习资源
 
@@ -113,3 +113,4 @@
 ## 问题答疑
 
 如在基于昇思MindSpore+香橙派开发板开发过程中遇到任何问题，欢迎在本代码仓中提交`issue`，定期会有工程师进行答疑。
+
