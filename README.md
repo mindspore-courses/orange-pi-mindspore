@@ -61,6 +61,7 @@
 |[MiniCPM3-4B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/19-MiniCPM3)  | 推理 | 8.0.0beta1 | 2.5.0| 20T24G |
 |[RoBERTaNER](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/RoBERTaNER) | 推理 | 8.0.0.beta1 | 2.6.0 | 20T24G |
 |[SentenceSimilarity](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/SentenceSimilarity) | 推理 | 8.0.0.beta1 | 2.6.0 | 20T24G |
+|[FeatureExtraction](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/FeatureExtraction) | 推理 | 8.0.0.beta1 | 2.6.0 | 20T24G |
 
 > 注：在线推理案例指导请参考Online/inference文件夹中的README文档
 
