@@ -1,10 +1,10 @@
-# Document Question Answering
+# Image Classification
 
-基于MindSpore框架和Qwen1.5-0.5b模型实现的RAG文档问答系统
+基于MindSpore框架和AltCLIP模型实现的图像分类
 
 ## 介绍
 
-基于香橙派AIPro，利用大语言模型，解析和处理PDF 文档，构建一个智能问答系统。
+基于香橙派AIPro 24G 20T，利用AltCLIP，实现图像分类。
 
 ### 环境准备
 
@@ -34,28 +34,12 @@ MindSpore升级参考[昇思MindSpore官网--香橙派开发专区--环境搭建
 Python == 3.9
 MindSpore == 2.6.0
 mindnlp == 0.4.1
-sympy  == 1.14.0
-jieba == 0.42.1
-tokenizers == 0.21.4
 ```
 ## 快速使用
 
-建议下载qwen1.5-0.5b模型至本地路径（如/home/HwHiAiUser）：
-
-```
-git lfs install
-git clone https://huggingface.co/Qwen/Qwen1.5-0.5B-Chat
-```
-
-同时下载paraphrase-multilingual-MiniLM-L12-v2模型至本地：
-
-```
-git clone https://www.modelscope.cn/Ceceliachenen/paraphrase-multilingual-MiniLM-L12-v2.git
-```
-
-在ipynb文件中根据模型路径修改对应step中的模型路径，然后逐步运行即可。最后query="什么是MindSpore？具体介绍一下"可以根据用户自己意愿修改query内容，体验不同问题的答案结果
+在ipynb文件中逐步运行即可，可以修改图片url参数来对不同的图片进行分类。
 
 ## 预期输出
 
-模型根据文档内容回答关于Mindspore的相关问题，减少幻觉产生。
+输出图片对应的类别以及置信度等信息。
 
