@@ -1,0 +1,4 @@
+/dofbot_kinemarics_server:
+  ros__parameters:
+    # 机械臂的模型描述文件
+    urdf_path: /root/ros2_robot_arm/ros2_ws/src/dofbot_moveit/urdf/dofbot.urdf
