@@ -1,0 +1,26 @@
+float64 tar_x
+float64 tar_y
+float64 tar_z
+float64 roll
+float64 pitch
+float64 yaw
+float64 cur_joint1
+float64 cur_joint2
+float64 cur_joint3
+float64 cur_joint4
+float64 cur_joint5
+float64 cur_joint6
+string  kin_name
+---
+float64 joint1
+float64 joint2
+float64 joint3
+float64 joint4
+float64 joint5
+float64 joint6
+float64 x
+float64 y
+float64 z
+float64 roll
+float64 pitch
+float64 yaw
