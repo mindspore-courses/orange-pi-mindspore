@@ -1,0 +1,4 @@
+opencv-python==4.8.0.74
+opencv-contrib-python==4.8.0.74
+moviepy==1.0.3
+download
