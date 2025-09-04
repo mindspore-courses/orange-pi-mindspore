@@ -4,4 +4,6 @@
 | :----- | :----- | :----- | :----- |
 | RoBERTaNER | 8.0.0.beta1 | 2.6.0 | 20T24G |
 | SentenceSimilarity | 8.0.0.beta1 | 2.6.0 | 20T24G |
-
+|[Image-to-Text](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/06-Image-to-Text) |8.0.0.beta1   |2.6.0  |8T16G  |
+|[Text Ranking](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/18-Text-Ranking) | 8.0.0.beta1  | 2.6.0 |8T16G |
+|[Video Classification](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/07-Video-Classification) | 8.0.0.beta1  | 2.6.0 |8T16G |
