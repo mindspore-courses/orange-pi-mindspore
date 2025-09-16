@@ -61,10 +61,11 @@
 
 | 案例名称 | CANN版本 | Mindspore版本 | 香橙派开发板型号 |
 | :----- |:----- |:----- |:-----|
-| RoBERTaNER | 8.0.0.beta1  |2.6.0  |20T24G  |
-| SentenceSimilarity | 8.0.0.beta1  |2.6.0  |20T24G  |
-|[Image-to-Text](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/06-Image-to-Text) |8.0.0.beta1   |2.6.0  |8T16G  |
-|[Text Ranking](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/18-Text-Ranking) | 8.0.0.beta1  | 2.6.0 |8T16G |
+| [RoBERTaNER](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/RoBERTaNER) | 8.0.0.beta1  | 2.6.0  | 20T24G  |
+| [SentenceSimilarity](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/SentenceSimilarity) | 8.0.0.beta1  | 2.6.0  | 20T24G  |
+| [Image-to-Text](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/06-Image-to-Text) |8.0.0.beta1   |2.6.0  |8T16G  |
+| [Text Ranking](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/18-Text-Ranking) | 8.0.0.beta1  | 2.6.0 |8T16G |
+| [FeatureExtraction](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/FeatureExtraction) | 8.0.0.beta1 | 2.6.0 | 20T24G |
 
 ## 学习资源
 
