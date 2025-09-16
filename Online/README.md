@@ -35,7 +35,7 @@
 |[FCN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/04-FCN)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[ShuffleNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/05-ShuffleNet)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[SSD](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/06-SSD)|8.1.RC1  | 2.6.0| 8T8G |
-|[RNN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/07-RNN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[RNN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/07-RNN)|8.1.RC1  | 2.6.0| 8T8G |
 |[LSTM+CRF](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/08-LSTM%2BCRF)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[GAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/09-GAN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[DCGAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/10-DCGAN)|8.1.RC1  | 2.6.0| 8T8G |
@@ -63,8 +63,9 @@
 | :----- |:----- |:----- |:-----|
 | [RoBERTaNER](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/RoBERTaNER) | 8.0.0.beta1  | 2.6.0  | 20T24G  |
 | [SentenceSimilarity](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/SentenceSimilarity) | 8.0.0.beta1  | 2.6.0  | 20T24G  |
+| [Image-to-Text](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/06-Image-to-Text) |8.0.0.beta1   |2.6.0  |8T16G  |
+| [Text Ranking](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/18-Text-Ranking) | 8.0.0.beta1  | 2.6.0 |8T16G |
 | [FeatureExtraction](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/FeatureExtraction) | 8.0.0.beta1 | 2.6.0 | 20T24G |
-| [Image-to-Text](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/06-Image-to-Text) | 8.0.0.beta1   | 2.6.0  | 8T16G  |
 
 ## 学习资源
 
