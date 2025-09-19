@@ -4,6 +4,15 @@
 可计算问题：SUM / COUNT / MAX / MIN 等（如“贡献者总数多少”“Stars 最多的是谁？”）
 
 查值问题：基于自然语言的抽取式问答（如“Datasets 的编程语言是什么？”、“哪个仓库使用 Rust？”）
+## 环境依赖说明
+本案例基于 MindSpore + MindNLP + CANN 在香橙派 AIpro 开发板上运行，具体版本如下：
+| 组件       | 版本          |
+| ---------- | ------------- |
+| MindSpore  | 2.6.0         |
+| MindNLP    | 0.4.1         |
+| CANN       | 8.0.0.beta1   |
+| Python     | 3.9           |
+| 开发板型号 | Orange Pi AIpro（Ascend 310，20T24G） |
 ## 模型准备
 模型名称：distilbert-base-uncased-distilled-squad
 
