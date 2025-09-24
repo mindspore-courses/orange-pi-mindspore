@@ -5,7 +5,7 @@
 | ---------- | ------------- |
 | MindSpore  | 2.6.0         |
 | MindNLP    | 0.4.1         |
-| CANN       | 8.0.0.beta1   |
+| CANN       | 8.1.RC1   |
 | Python     | 3.9           |
 | 开发板型号 | Orange Pi AIpro（Ascend 310，8T16G） |
 ## 模型准备
