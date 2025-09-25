@@ -6,6 +6,7 @@
 | SentenceSimilarity | 8.0.0.beta1 | 2.6.0 | 20T24G |
 | FeatureExtraction | 8.0.0.beta1 | 2.6.0 | 20T24G |
 | TableQuestionAnswering | 8.0.0.beta1 | 2.6.0 | 20T24G |
+| MaskGeneration | 8.1.RC1 | 2.6.0 | 8T16G |
 
 
 
