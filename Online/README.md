@@ -69,7 +69,6 @@
 | [TableQuestionAnswering](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/TableQuestionAnswering) | 8.0.0.beta1 | 2.6.0         | 20T24G           |
 | [ImageClassification](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/ImageClassification) | 8.0.0.beta1 | 2.6.0         | 20T24G           |
 | [Text Classification](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/Text%20Classification) | 8.0.0.beta1  |2.6.0  |20T24G  |
-
 | [MaskGeneration](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/MaskGeneration) | 8.1.RC1 | 2.6.0 | 8T16G |
 
 ## 学习资源
