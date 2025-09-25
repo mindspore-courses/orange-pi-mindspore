@@ -1,5 +1,5 @@
-# 文本摘要（Summarization）
-本项目在 Ascend 架构的香橙派 AIpro 开发板上，实现一个文本摘要应用
+# 掩码生成（Mask Generation）
+本项目在 Ascend 架构的香橙派 AIpro 开发板上，实现一个掩码生成应用
 本案例基于 MindNLP + CANN 在香橙派 AIpro 开发板上运行，具体版本如下：
 | 组件       | 版本          |
 | ---------- | ------------- |
