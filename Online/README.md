@@ -28,52 +28,58 @@
 
 ### 推理案例(inference)
 
-| 模型名 | CANN版本 | Mindspore版本 | 香橙派开发板型号 |
-| :----- |:----- |:----- |:-----|
-| [ResNet50](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/02-ResNet50) | 8.1.RC1  | 2.6.0| 8T8G |
-|[ViT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/03-ViT)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[FCN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/04-FCN)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[ShuffleNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/05-ShuffleNet)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[SSD](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/06-SSD)|8.1.RC1  | 2.6.0| 8T8G |
-|[RNN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/07-RNN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[LSTM+CRF](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/08-LSTM%2BCRF)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[GAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/09-GAN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[DCGAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/10-DCGAN)|8.1.RC1  | 2.6.0| 8T8G |
-|[Pix2Pix](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/11-Pix2Pix)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[Diffusion](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/12-Diffusion)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[ResNet50_transfer](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/13-ResNet50_transfer)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[Qwen1.5-0.5b](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/14-qwen1.5-0.5b)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[TinyLlama-1.1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/15-tinyllama)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[DctNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/16-DctNet)  |8.0.RC3.alpha002  | 2.4.10| 8T16G |
-|[DeepSeek-R1-Distill-Qwen-1.5B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/17-DeepSeek-R1-Distill-Qwen-1.5B) | 8.0.RC3.alpha002/8.0.0.beta1/8.1.RC1.beta1  | 2.4.10/2.5.0/2.6.0| 20T24G |
-|[DeepSeek-Janus-Pro-1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/18-DeepSeek-Janus-Pro-1B) | 8.0.RC3.alpha002/8.0.0beta1 | 2.4.10/2.5.0| 20T24G |
-|[MiniCPM3-4B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/19-MiniCPM3) | 8.0.0beta1 | 2.5.0| 20T24G |
+| 模型名                                                       | CANN版本                                   | Mindspore版本      | 香橙派开发板型号 |
+| :----------------------------------------------------------- | :----------------------------------------- | :----------------- | :--------------- |
+| [ResNet50](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/02-ResNet50) | 8.1.RC1                                    | 2.6.0              | 8T8G             |
+| [ViT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/03-ViT) | 8.0.RC3.alpha002                           | 2.4.10             | 8T16G            |
+| [FCN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/04-FCN) | 8.0.RC3.alpha002                           | 2.4.10             | 8T16G            |
+| [ShuffleNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/05-ShuffleNet) | 8.0.RC3.alpha002                           | 2.4.10             | 8T16G            |
+| [SSD](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/06-SSD) | 8.1.RC1                                    | 2.6.0              | 8T8G             |
+| [RNN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/07-RNN) | 8.1.RC1                                    | 2.6.0              | 8T8G             |
+| [LSTM+CRF](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/08-LSTM%2BCRF) | 8.0.RC3.alpha002                           | 2.4.10             | 8T16G            |
+| [GAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/09-GAN) | 8.0.RC3.alpha002                           | 2.4.10             | 8T16G            |
+| [DCGAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/10-DCGAN) | 8.1.RC1                                    | 2.6.0              | 8T8G             |
+| [Pix2Pix](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/11-Pix2Pix) | 8.0.RC3.alpha002                           | 2.4.10             | 8T16G            |
+| [Diffusion](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/12-Diffusion) | 8.0.RC3.alpha002                           | 2.4.10             | 8T16G            |
+| [ResNet50_transfer](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/13-ResNet50_transfer) | 8.0.RC3.alpha002                           | 2.4.10             | 8T16G            |
+| [Qwen1.5-0.5b](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/14-qwen1.5-0.5b) | 8.0.RC3.alpha002                           | 2.4.10             | 8T16G            |
+| [TinyLlama-1.1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/15-tinyllama) | 8.0.RC3.alpha002                           | 2.4.10             | 8T16G            |
+| [DctNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/16-DctNet) | 8.0.RC3.alpha002                           | 2.4.10             | 8T16G            |
+| [DeepSeek-R1-Distill-Qwen-1.5B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/17-DeepSeek-R1-Distill-Qwen-1.5B) | 8.0.RC3.alpha002/8.0.0.beta1/8.1.RC1.beta1 | 2.4.10/2.5.0/2.6.0 | 20T24G           |
+| [DeepSeek-Janus-Pro-1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/18-DeepSeek-Janus-Pro-1B) | 8.0.RC3.alpha002/8.0.0beta1                | 2.4.10/2.5.0       | 20T24G           |
+| [MiniCPM3-4B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/19-MiniCPM3) | 8.0.0beta1                                 | 2.5.0              | 20T24G           |
 
 ### 训推案例(training)
 
-| 模型名 | CANN版本 | Mindspore版本 | 香橙派开发板型号 |
-| :----- |:----- |:----- |:-----|
-| [DeepSeek-R1-Distill-Qwen-1.5B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/training/01-DeepSeek-R1-Distill-Qwen-1.5B) | 8.0.0.beta1/8.1.RC1.beta1  | 2.5.0/2.6.0 | 20T24G |
-|[minGPT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/training/02-minGPT)| 8.1.RC1.beta1  | 2.6.0 | 20T24G |
-|[BERT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/training/03-BERT)| 8.0.0.beta1  | 2.5.0 | 20T24G |
+| 模型名                                                       | CANN版本                  | Mindspore版本 | 香橙派开发板型号 |
+| :----------------------------------------------------------- | :------------------------ | :------------ | :--------------- |
+| [DeepSeek-R1-Distill-Qwen-1.5B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/training/01-DeepSeek-R1-Distill-Qwen-1.5B) | 8.0.0.beta1/8.1.RC1.beta1 | 2.5.0/2.6.0   | 20T24G           |
+| [minGPT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/training/02-minGPT) | 8.1.RC1.beta1             | 2.6.0         | 20T24G           |
+| [BERT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/training/03-BERT) | 8.0.0.beta1               | 2.5.0         | 20T24G           |
 
 ### 第三方应用案例(community)
 
-| 案例名称 | CANN版本 | Mindspore版本 | 香橙派开发板型号 |
-| :----- |:----- |:----- |:-----|
-| RoBERTaNER | 8.0.0.beta1  |2.6.0  |20T24G  |
-| SentenceSimilarity | 8.0.0.beta1  |2.6.0  |20T24G  |
-|[Image-to-Text](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/06-Image-to-Text) |8.0.0.beta1   |2.6.0  |8T16G  |
-|[Text Ranking](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/18-Text-Ranking) | 8.0.0.beta1  | 2.6.0 |8T16G |
-|[Video Classification](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/07-Video-Classification) | 8.0.0.beta1  | 2.6.0 |8T16G |
+
+| 案例名称                                                     | CANN版本    | Mindspore版本 | 香橙派开发板型号 |
+| :----------------------------------------------------------- | :---------- | :------------ | :--------------- |
+| [RoBERTaNER](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/RoBERTaNER) | 8.0.0.beta1 | 2.6.0         | 20T24G           |
+| [SentenceSimilarity](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/SentenceSimilarity) | 8.0.0.beta1 | 2.6.0         | 20T24G           |
+| [Image-to-Text](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/06-Image-to-Text) | 8.0.0.beta1 | 2.6.0         | 8T16G            |
+| [Text Ranking](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/18-Text-Ranking) | 8.0.0.beta1 | 2.6.0         | 8T16G            |
+| [FeatureExtraction](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/FeatureExtraction) | 8.0.0.beta1 | 2.6.0         | 20T24G           |
+| [TableQuestionAnswering](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/TableQuestionAnswering) | 8.0.0.beta1 | 2.6.0         | 20T24G           |
+| [ImageClassification](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/ImageClassification) | 8.0.0.beta1 | 2.6.0         | 20T24G           |
+| [Text Classification](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/Text%20Classification) | 8.0.0.beta1  |2.6.0  |20T24G  |
+| [Video Classification](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/07-Video-Classification) | 8.0.0.beta1  | 2.6.0 |8T16G |
+
 ## 学习资源
 
-| 阶段 | 描述 | 链接 |
-| :----- |:----- |:----- |
-| 镜像获取 | 香橙派官网-官方镜像 | [8T](http://www.orangepi.cn/html/hardWare/computerAndMicrocontrollers/service-and-support/Orange-Pi-AIpro.html)</br>[20T](http://www.orangepi.cn/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-AIpro(20T).html) |
-| 环境搭建 | 昇思官网香橙派开发教程 | [香橙派开发](https://www.mindspore.cn/tutorials/zh-CN/r2.6.0/orange_pi/overview.html) | 
-| 精品课程 | 《昇思+昇腾开发板：</br> 软硬结合玩转DeepSeek开发实战》课程  | [课程链接](https://www.hiascend.com/developer/courses/detail/1925362775376744449) | 
-| 案例分享 | 昇腾开发板专区-案例分享 | [昇腾开发板专区](https://www.hiascend.com/developer/devboard) |
+| 阶段     | 描述                                                        | 链接                                                         |
+| :------- | :---------------------------------------------------------- | :----------------------------------------------------------- |
+| 镜像获取 | 香橙派官网-官方镜像                                         | [8T](http://www.orangepi.cn/html/hardWare/computerAndMicrocontrollers/service-and-support/Orange-Pi-AIpro.html)</br>[20T](http://www.orangepi.cn/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-AIpro(20T).html) |
+| 环境搭建 | 昇思官网香橙派开发教程                                      | [香橙派开发](https://www.mindspore.cn/tutorials/zh-CN/r2.6.0/orange_pi/overview.html) |
+| 精品课程 | 《昇思+昇腾开发板：</br> 软硬结合玩转DeepSeek开发实战》课程 | [课程链接](https://www.hiascend.com/developer/courses/detail/1925362775376744449) |
+| 案例分享 | 昇腾开发板专区-案例分享                                     | [昇腾开发板专区](https://www.hiascend.com/developer/devboard) |
 
 ## 贡献指南
 
@@ -114,4 +120,3 @@
 ## 问题答疑
 
 如在基于昇思MindSpore+香橙派开发板开发过程中遇到任何问题，欢迎在本代码仓中提交`issue`，定期会有工程师进行答疑。
-
