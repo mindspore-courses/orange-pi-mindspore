@@ -67,8 +67,7 @@
 | [Text Ranking](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/18-Text-Ranking) | 8.0.0.beta1 | 2.6.0         | 8T16G            |
 | [FeatureExtraction](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/FeatureExtraction) | 8.0.0.beta1 | 2.6.0         | 20T24G           |
 | [TableQuestionAnswering](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/TableQuestionAnswering) | 8.0.0.beta1 | 2.6.0         | 20T24G           |
-| [ImageClassification](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/ImageClassification) | 8.0.0.beta1 | 2.6.0         | 20T24G           |
-| [Text Classification](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/Text%20Classification) | 8.0.0.beta1  |2.6.0  |20T24G  |
+| [DocumentQuestionAnswering](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/DocumentQuestionAnswering) | 8.0.0.beta1 | 2.6.0         | 20T24G           |
 
 
 ## 学习资源
