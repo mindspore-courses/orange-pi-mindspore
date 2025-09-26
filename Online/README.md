@@ -69,6 +69,7 @@
 | [TableQuestionAnswering](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/TableQuestionAnswering) | 8.0.0.beta1 | 2.6.0         | 20T24G           |
 | [DocumentQuestionAnswering](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/DocumentQuestionAnswering) | 8.0.0.beta1 | 2.6.0         | 20T24G           |
 
+
 ## 学习资源
 
 | 阶段     | 描述                                                        | 链接                                                         |
