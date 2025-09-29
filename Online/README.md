@@ -74,6 +74,7 @@
 | [Translation](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/Translation) | 8.1.RC1 | 2.6.0 | 8T16G |
 | [Object-Detection](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/04-Object-Detection) | 8.0.0.beta1   |2.6.0  |8T16G  |
 | [Video Classification](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/07-Video-Classification) | 8.0.0.beta1  | 2.6.0 |8T16G |
+| [MaskGeneration](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/MaskGeneration) | 8.1.RC1 | 2.6.0 | 8T16G |
 
 
 ## 学习资源
