@@ -9,5 +9,7 @@
 | TableQuestionAnswering | 8.0.0.beta1 | 2.6.0         | 20T24G           |
 | ImageClassification    | 8.0.0.beta1 | 2.6.0         | 20T24G           |
 | Text Classification    | 8.0.0.beta1 | 2.6.0         | 20T24G           |
+| Summarization          | 8.1.RC1     | 2.6.0         | 8T16G            |
+| Translation            | 8.1.RC1     | 2.6.0         | 8T16G            |
 | [Object-Detection](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/04-Object-Detection) |8.0.0.beta1   |2.6.0  |8T16G  |
 
