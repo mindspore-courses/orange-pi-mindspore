@@ -59,6 +59,7 @@
 
 ### 第三方应用案例(community)
 
+
 | 案例名称                                                     | CANN版本    | Mindspore版本 | 香橙派开发板型号 |
 | :----------------------------------------------------------- | :---------- | :------------ | :--------------- |
 | [RoBERTaNER](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/RoBERTaNER) | 8.0.0.beta1 | 2.6.0         | 20T24G           |
@@ -72,7 +73,9 @@
 | [Summarization](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/Summarization) | 8.1.RC1 | 2.6.0 | 8T16G |
 | [Translation](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/Translation) | 8.1.RC1 | 2.6.0 | 8T16G |
 | [Object-Detection](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/04-Object-Detection) | 8.0.0.beta1   |2.6.0  |8T16G  |
+| [Video Classification](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/07-Video-Classification) | 8.0.0.beta1  | 2.6.0 |8T16G |
 | [MaskGeneration](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/MaskGeneration) | 8.1.RC1 | 2.6.0 | 8T16G |
+
 
 ## 学习资源
 
