@@ -59,11 +59,22 @@
 |[DeepSeek-R1-Distill-Qwen-1.5B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/training/01-DeepSeek-R1-Distill-Qwen-1.5B)  | 训练 | 8.0.0.beta1/8.1.RC1.beta1  | 2.5.0/2.6.0 | 20T24G |
 |[DeepSeek-Janus-Pro-1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/18-DeepSeek-Janus-Pro-1B)  | 推理 | 8.0.RC3.alpha002/8.0.0beta1 | 2.4.10/2.5.0| 20T24G |
 |[MiniCPM3-4B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/19-MiniCPM3)  | 推理 | 8.0.0beta1 | 2.5.0| 20T24G |
-|[RoBERTaNER](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/RoBERTaNER) | 推理 | 8.0.0.beta1 | 2.6.0 | 20T24G |
-|[SentenceSimilarity](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/SentenceSimilarity) | 推理 | 8.0.0.beta1 | 2.6.0 | 20T24G |
-|[FeatureExtraction](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/FeatureExtraction) | 推理 | 8.0.0.beta1 | 2.6.0 | 20T24G |
+| [TokenClassification](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/TokenClassification) | 推理 | 8.0.0.beta1 | 2.6.0         | 20T24G           |
+| [SentenceSimilarity](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/SentenceSimilarity) | 推理 | 8.0.0.beta1 | 2.6.0         | 20T24G           |
+| [ImageToText](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/ImageToText) | 推理 | 8.0.0.beta1 | 2.6.0         | 8T16G            |
+| [TextRanking](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/TextRanking) | 推理 | 8.0.0.beta1 | 2.6.0         | 8T16G            |
+| [FeatureExtraction](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/FeatureExtraction) | 推理 | 8.0.0.beta1 | 2.6.0         | 20T24G           |
+| [TableQuestionAnswering](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/TableQuestionAnswering) | 推理 | 8.0.0.beta1 | 2.6.0         | 20T24G           |
+| [ImageClassification](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/ImageClassification) | 推理 | 8.0.0.beta1 | 2.6.0         | 20T24G           |
+| [TextClassification](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/TextClassification) | 推理 | 8.0.0.beta1  |2.6.0  |20T24G  |
+| [Summarization](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/Summarization) | 推理 | 8.1.RC1 | 2.6.0 | 8T16G |
+| [Translation](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/Translation) | 推理 | 8.1.RC1 | 2.6.0 | 8T16G |
+| [ObjectDetection](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/ObjectDetection) | 推理 | 8.0.0.beta1   |2.6.0  |8T16G  |
+| [VideoClassification](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/VideoClassification) | 推理 | 8.0.0.beta1  | 2.6.0 |8T16G |
+| [MaskGeneration](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/MaskGeneration) | 推理 | 8.1.RC1 | 2.6.0 | 8T16G |
+| [DocumentQuestionAnswering](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/DocumentQuestionAnswering) | 推理 | 8.0.0.beta1 | 2.6.0         | 
 
-> 注：在线推理案例指导请参考Online/inference文件夹中的README文档
+> 注：在线案例指导请参考Online文件夹中的README文档
 
 ### 离线推理（Offline）
 | 模型名 | 支持CANN版本 | 支持Mindspore版本 | 支持的香橙派开发板型号 |
