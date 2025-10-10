@@ -75,6 +75,7 @@
 |[Shufflenet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Offline/05-Shufflenet)|8.0.RC2.alpha003  | 2.2.14| 8T16G |
 |[FCN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Offline/06-FCN)|8.0.RC2.alpha003  | 2.2.14| 8T16G |
 |[Pix2Pix](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Offline/07-Pix2Pix)|8.0.RC2.alpha003  | 2.2.14| 8T16G |
+|[RingMoE]()|8.0.0.beta1 | 	2.6.0 | 20T24G |
 
 > 注：离线推理案例指导请参考Offline文件夹中的README文档
 
