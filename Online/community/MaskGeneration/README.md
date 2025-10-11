@@ -1,10 +1,10 @@
 # 掩码生成（Mask Generation）
 本项目在 Ascend 架构的香橙派 AIpro 开发板上，实现一个掩码生成应用  
-本案例基于 MindNLP + CANN 在香橙派 AIpro 开发板上运行，具体版本如下：
+本案例基于 MindSpore NLP + CANN 在香橙派 AIpro 开发板上运行，具体版本如下：
 | 组件       | 版本          |
 | ---------- | ------------- |
 | MindSpore  | 2.6.0         |
-| MindNLP    | 0.4.1         |
+| MindSpore NLP    | 0.4.1         |
 | CANN       | 8.1.RC1   |
 | Python     | 3.9           |
 | 开发板型号 | Orange Pi AIpro（Ascend 310，8T16G） |
