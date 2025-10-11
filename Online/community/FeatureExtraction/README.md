@@ -14,7 +14,7 @@ Python：3.9
 
 MindSpore：2.6.0（Ascend 版本）
 
-MindNLP：0.4.1
+MindSpore NLP：0.4.1
 
 依赖库：numpy, scikit-learn
 

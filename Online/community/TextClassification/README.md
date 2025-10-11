@@ -1,4 +1,4 @@
-# OrangePi AIpro 文本分类应用 (MindSpore + MindNLP)
+# OrangePi AIpro 文本分类应用 (MindSpore + MindSpore NLP)
 
 本目录包含部署在香橙派 AIpro (Ascend 310B) 上的中文新闻文本分类示例。
 
@@ -6,7 +6,7 @@
 - Python 3.9
 - CANN Toolkit/Kernels 8.0.0.beta1
 - MindSpore 2.6.0 (Ascend)
-- MindNLP 0.4.1
+- MindSpore NLP 0.4.1
 
 ## 功能概要
 - 预训练中文 Transformer直接进行推理

@@ -9,5 +9,5 @@
 说明：本模型体积约为 390MB，满足4GB 以下要求
 
 ## 推理方式
-使用 MindNLP 提供的 BertTokenizer 和 BertModel，将输入句子进行分词、编码，获取 `[CLS]` 向量表示句子语义，使用 NumPy 计算两个向量间的余弦相似度。
+使用 MindSpore NLP 提供的 BertTokenizer 和 BertModel，将输入句子进行分词、编码，获取 `[CLS]` 向量表示句子语义，使用 NumPy 计算两个向量间的余弦相似度。
 
