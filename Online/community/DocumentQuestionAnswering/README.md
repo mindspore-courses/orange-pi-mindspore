@@ -14,7 +14,7 @@
 开发板镜像: Ubuntu镜像  
 `CANN Toolkit/Kernels：8.0.0.beta1`  
 `MindSpore: 2.6.0`  
-`MindNLP: 0.4.1`  
+`MindSpore NLP: 0.4.1`  
 `Python: 3.9`
 
 #### 镜像烧录
