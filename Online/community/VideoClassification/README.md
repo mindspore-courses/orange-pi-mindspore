@@ -1,10 +1,6 @@
-# Image Classification
+# Video Classification
 
-基于MindSpore框架和AltCLIP模型实现的图像分类
-
-## 介绍
-
-基于香橙派AIPro 24G 20T，利用AltCLIP，实现图像分类。
+基于`MindSpore`框架和`google/vivit-b-16x2-kinetics400`模型实现的Video Classification应用
 
 ### 环境准备
 
@@ -29,17 +25,32 @@ CANN升级参考[昇思MindSpore官网--香橙派开发专区--环境搭建指�
 
 MindSpore升级参考[昇思MindSpore官网--香橙派开发专区--环境搭建指南--MindSpore升级](https://www.mindspore.cn/tutorials/zh-CN/r2.7.0rc1/orange_pi/environment_setup.html)章节。
 
-### 核心库版本
+### requirements
 ```
 Python == 3.9
+
 MindSpore == 2.6.0
+
 mindnlp == 0.4.1
+
+opencv-python  == 4.12.0.88
+
+pillow == 11.3.0
+
+sympy  == 1.14.0
+
+av == 15.1.0
+
+matplotlib == 3.9.4
 ```
 ## 快速使用
 
-在ipynb文件中逐步运行即可，可以修改图片url参数来对不同的图片进行分类。
+用户在准备好上述环境之后，逐步运行video_classification.ipynb文件即可，代码中模型加载部分会自动从huggingface镜像中下载模型。
+使用时需经视频路径替换为你想要识别的视频路径，逐步运行后模型会返回识别结果并保存视频；
 
 ## 预期输出
+在输出结果中展示第一帧及识别结果并保存识别结果视频
 
-输出图片对应的类别以及置信度等信息。
+
+
 

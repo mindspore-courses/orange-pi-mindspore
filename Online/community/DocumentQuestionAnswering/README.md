@@ -1,10 +1,10 @@
-# Image-to-Text
+# Document Question Answering
 
-基于MindSpore框架和Blip模型实现的图像生成文本应用
+基于MindSpore框架和Qwen1.5-0.5b模型实现的RAG文档问答系统
 
 ## 介绍
 
-基于香橙派AIPro边缘计算硬件的低功耗、高算力特性，结合MindSpore开源框架的灵活部署能力，搭载BLIP图生文模型实现图像内容的精准语义转述。
+基于香橙派AIPro，利用大语言模型，解析和处理PDF 文档，构建一个智能问答系统。
 
 ### 环境准备
 
@@ -14,7 +14,7 @@
 开发板镜像: Ubuntu镜像  
 `CANN Toolkit/Kernels：8.0.0.beta1`  
 `MindSpore: 2.6.0`  
-`MindNLP: 0.4.1`  
+`MindSpore NLP: 0.4.1`  
 `Python: 3.9`
 
 #### 镜像烧录
@@ -29,33 +29,33 @@ CANN升级参考[昇思MindSpore官网--香橙派开发专区--环境搭建指�
 
 MindSpore升级参考[昇思MindSpore官网--香橙派开发专区--环境搭建指南--MindSpore升级](https://www.mindspore.cn/tutorials/zh-CN/r2.7.0rc1/orange_pi/environment_setup.html)章节。
 
-### requirements.txt
+### 核心库版本
 ```
 Python == 3.9
-
 MindSpore == 2.6.0
-
 mindnlp == 0.4.1
-
-opencv-python  == 4.12.0.88
-
-pillow == 11.3.0
-
 sympy  == 1.14.0
+jieba == 0.42.1
+tokenizers == 0.21.4
 ```
 ## 快速使用
 
-用户在准备好上述环境之后，直接运行image-to-text.ipynb文件即可，代码中模型加载部分会自动从huggingface镜像中下载模型。
-运行程序后输入图像路径，模型会返回识别结果；
-输入stop终止程序
+建议下载qwen1.5-0.5b模型至本地路径（如/home/HwHiAiUser）：
+
+```
+git lfs install
+git clone https://huggingface.co/Qwen/Qwen1.5-0.5B-Chat
+```
+
+同时下载paraphrase-multilingual-MiniLM-L12-v2模型至本地：
+
+```
+git clone https://www.modelscope.cn/Ceceliachenen/paraphrase-multilingual-MiniLM-L12-v2.git
+```
+
+在ipynb文件中根据模型路径修改对应step中的模型路径，然后逐步运行即可。最后query="什么是MindSpore？具体介绍一下"可以根据用户自己意愿修改query内容，体验不同问题的答案结果
 
 ## 预期输出
 
-``````
-请输入图像路径
-用户:  /opt/image2text/shixi/test.png
-Blip: a tree with pink flowers against a blue sky
-``````
-
-
+模型根据文档内容回答关于Mindspore的相关问题，减少幻觉产生。
 
