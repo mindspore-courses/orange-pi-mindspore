@@ -17,7 +17,7 @@
 |[ShuffleNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/05-ShuffleNet)| 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[SSD](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/06-SSD)|8.1.RC1  | 2.6.0| 8T8G |
 |[RNN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/07-RNN)|8.1.RC1  | 2.6.0| 8T8G |
-|[LSTM+CRF](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/08-LSTM%2BCRF)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[LSTM+CRF](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/08-LSTM%2BCRF)| 8.1.RC1  | 2.6.0|  8T16G |
 |[GAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/09-GAN)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[DCGAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/10-DCGAN)|8.1.RC1  | 2.6.0| 8T8G |
 |[Pix2Pix](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/11-Pix2Pix)|8.0.RC3.alpha002  | 2.4.10| 8T16G |
