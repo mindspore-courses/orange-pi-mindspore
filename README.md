@@ -83,6 +83,7 @@
 | [VideoClassification](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/VideoClassification) | 推理 | 8.0.0.beta1  | 2.6.0 |8T16G |
 | [MaskGeneration](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/MaskGeneration) | 推理 | 8.1.RC1 | 2.6.0 | 8T16G |
 | [DocumentQuestionAnswering](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/DocumentQuestionAnswering) | 推理 | 8.0.0.beta1 | 2.6.0         | 20T24G           |
+| [DepthEstimation](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/DepthEstimation) | 推理 | 8.1.RC1   |2.6.0  |8T16G  |
 
 > 注：在线案例指导请参考Online文件夹中的README文档
 
