@@ -76,7 +76,7 @@
 | [VideoClassification](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/VideoClassification) | 8.0.0.beta1  | 2.6.0 |8T16G |
 | [MaskGeneration](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/MaskGeneration) | 8.1.RC1 | 2.6.0 | 8T16G |
 | [DocumentQuestionAnswering](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/DocumentQuestionAnswering) | 8.0.0.beta1 | 2.6.0         | 20T24G           |
-
+| [DepthEstimation](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/community/DepthEstimation) | 8.1.RC1   |2.6.0  |8T16G  |
 
 
 ## 学习资源
