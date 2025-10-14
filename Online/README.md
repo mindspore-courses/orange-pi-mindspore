@@ -41,7 +41,7 @@
 | [DCGAN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/10-DCGAN) | 8.1.RC1                                    | 2.6.0              | 8T8G             |
 | [Pix2Pix](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/11-Pix2Pix) | 8.0.RC3.alpha002                           | 2.4.10             | 8T16G            |
 | [Diffusion](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/12-Diffusion) | 8.0.RC3.alpha002                           | 2.4.10             | 8T16G            |
-| [ResNet50_transfer](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/13-ResNet50_transfer) | 8.0.RC3.alpha002                           | 2.4.10             | 8T16G            |
+| [ResNet50_transfer](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/13-ResNet50_transfer) | 8.1.RC1                           | 2.6.0             | 8T16G            |
 | [Qwen1.5-0.5b](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/14-qwen1.5-0.5b) | 8.0.RC3.alpha002                           | 2.4.10             | 8T16G            |
 | [TinyLlama-1.1B](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/15-tinyllama) | 8.0.RC3.alpha002                           | 2.4.10             | 8T16G            |
 | [DctNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/16-DctNet) | 8.0.RC3.alpha002                           | 2.4.10             | 8T16G            |
