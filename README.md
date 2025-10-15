@@ -46,7 +46,7 @@
 | 模型 | 训练/推理 | CANN版本 | Mindspore版本 | 香橙派开发板型号 |
 | :----- |:----- |:----- |:-----|:-----|
 | [ResNet50](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/02-ResNet50) | 推理 | 8.1.RC1  | 2.6.0| 8T8G |
-|[ViT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/03-ViT)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
+|[ViT](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/03-ViT)|推理 |8.1.RC1  | 2.6.0| 8T8G |
 |[FCN](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/04-FCN)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[ShuffleNet](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/05-ShuffleNet)| 推理 | 8.0.RC3.alpha002  | 2.4.10| 8T16G |
 |[SSD](https://github.com/mindspore-courses/orange-pi-mindspore/tree/master/Online/inference/06-SSD)| 推理 | 8.1.RC1  | 2.6.0| 8T8G |
